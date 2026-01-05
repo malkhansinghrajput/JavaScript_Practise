@@ -1,0 +1,48 @@
+<!-- 
+Decision making controle statement:
+1.if (condition)
+{
+...statement
+} 
+else if (condition) {
+...statement
+}
+else if (condition){
+...statement
+}
+else{
+...statements
+}
+=========
+-->
+
+<script>
+ // find max out of three
+ var a = 12
+ var b = 13
+ var c = 13
+
+ if(a>b && a>c)
+ {
+   document.write("<h1>A is greatest: "+a+"</h1>")    
+ }
+ else if(b>a && b>c)
+ {
+  document.write("<h1>B is greatest: "+b+"</h1>")
+ }
+ else if(a==b && a==c)
+ {
+  document.write("<h1>All are Equal: "+c+"</h1>")
+ }
+ else if(a==b)
+ {
+  document.write("<h1>A & B are equal: "+a+"</h1>")
+ }
+ else if(c==b)
+ {
+  document.write("<h1>B & C are equal: "+b+"</h1>")
+ }
+ else{
+  document.write("<h1>C is greatest: "+c+"</h1>")     
+ }
+</script>

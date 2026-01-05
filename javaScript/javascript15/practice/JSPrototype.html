@@ -1,0 +1,40 @@
+<!--
+In javaScript, a prototype is a machanism that allow object(Function, Array, JSobject, String) to inherit properties and method from other objects. Each javaScript Object has an internal property, which points to another object. This prototype chain allows properties and methods to be shared across objects.
+=====
+How Prototype work :
+When we create a new object using new Person(), it inherit properties  from person constructor function's prototype .
+The method greet is not directly inside the persion1 object , but JavaScript will look in the prototype chain and find it in persion. ProtoType.
+========
+ProtoType Chain :
+Persion 1 will First look for the method greet in its own properties.
+If it doesn't find it there , it will search in Persion.Prototype.
+If Persion.Prototype does not have  the method,
+JavaScript will continue looking further up the  
+prototype chain (e.g, prototype).
+this : it is a reference to current object
+-->
+<script>
+    // Constructor Function
+    function person(name,age) {
+        this.name = name;
+        this.age = age;
+    }
+    // Adding a method to the prototype of person
+    person.prototype.greet = function(){
+        console.log(`Hello, My Name Is ${this.name} & I am ${this.age} Year Old. `)
+    }
+
+    // Creating an instance of person
+    let person1 = new person("malkhan Singh",24);
+    let person2 = new person("Rahul Sharma",34);
+   var m = person1.__proto__.address="USA"
+
+    // Calling the Greet method 
+    person1.greet();  
+    person2.greet()
+    // Output : Hello , my name is Alice and I am 24 year old
+
+    console.log(person1)
+    console.log(person2)
+    console.log(m)
+</script>

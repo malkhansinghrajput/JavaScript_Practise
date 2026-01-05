@@ -1,0 +1,306 @@
+<!--  
+Q.1 Write a program accepts two numbers from user and calculates first no is divisible by second or not ?  
+-->
+<!-- <script>
+     var num1 = parseInt(prompt("Enter first number"))
+     var num2 = parseInt(prompt("Enter Second Number"))
+     if(num1%num2===0){
+      document.write(`${num1} is Divisible by ${num2}`)
+     }else {
+        document.write(`${num1} is Not Divisible by ${num2}`)
+     }
+</script> -->
+
+<!-- 
+Q.2 Write a program accepts a number from user and check given number is even or odd.
+-->
+
+<!-- <script>
+    var num = parseInt(prompt("Enter valid number to check even or odd"))
+        if (num%2===0) {
+            document.write(`<h2>The Given Number ${num} is Even Number!</h2>`)
+        } else {
+           document.write(`<h2>The Given Number ${num} is Odd Number!!</h2>`)
+        }
+</script> -->
+
+<!-- 
+Q.3 Write a program accepts a number from user and check given number is palindrome number or not.
+-->
+
+<!-- <script>
+    var num = parseInt(prompt("Enter Only Four Digit Number to Check Palindrome Number"))
+     var check = 0
+     var rev = 0
+     var  copy = num
+     check =  num % 10
+     rev = rev * 10 + check
+     num = parseInt(num/10)
+     check = num % 10
+     rev = rev * 10 + check
+      num = parseInt(num/10)
+     check = num % 10
+     rev = rev * 10 + check
+      num = parseInt(num/10)
+     check = num % 10
+     rev = rev * 10 + check
+
+    if (rev == copy) {
+       document.write(`<h1>${copy} number is palindrome number</h1>`)
+    } else {
+        document.write(`${copy} is not palindrome number`)
+    }
+
+</script> -->
+
+<!-- 
+Q.4 Write a program accepts a number from user and check given number is Armstrong number or not. 371=3 power of 3 + 7 power of 3 + 1 power of 3
+        =27 + 343 + 1
+         =371 
+-->
+
+<!-- <script>
+    var num = parseInt(prompt("Enter 3 digit number only to check armstrong number"))
+    var copy = num
+    var sum = 0
+    var rem = num % 10
+        sum = sum + rem ** 3
+        num = parseInt(num/10)
+        rem = num % 10
+        sum = sum + rem ** 3
+        num = parseInt(num/10)
+        rem = num % 10 
+        sum = sum + rem ** 3 
+     
+     if (sum == copy) {
+        document.write(`${copy} number is Armstrong Number`)
+     } else {
+        document.write(`${copy} number is not Armstrong Number`)
+     }
+</script>
+ -->
+
+ <!-- 
+ Q.5 Write a program accept a three digits number from user and check biggest digit of given number.
+ -->
+
+ <!-- <script>
+    var num = parseInt(prompt("Enter 3 Digit number"))
+
+    var m3 = num % 10
+
+    num = parseInt(num / 10)
+
+    var m2 = num % 10
+
+    num  = parseInt(num / 10)
+
+    var m1 = num % 10
+
+    if(m1===m2 && m2===m3) {
+         document.write(`All are Equal"`)
+    }else {
+
+    (m1>m2) 
+    ? ((m1>m3)
+      ?document.write(`${m1} is Greater than ${m2} & ${m3}`)
+      :document.write(`${m3} is Greater than ${m1} & ${m2}`))
+    : ((m2>m3)
+       ? document.write(`${m2} is Greater than ${m1} & ${m3}`)
+       :document.write(`${m3} is Greater than ${m1} & ${m2}`));
+    }
+
+ </script> -->
+
+ <!--
+  Q.6 Write a program that accepts the age of person, find out the person is eligible for voting or not. 
+  -->
+
+  <!-- <script>
+      //  var age = parseInt(prompt("Enter age to Check Eligible for voting or Not"))
+      //  if(age >= 18 && age <= 100){
+      //        document.write(`<h1>${age} Year old is Eligible For Voting </h1>`)
+      //  } else if(age <= 18 && age >= 1 ) {
+      //      document.write(`<h1>${age} year is Not Eligible for Voting</h1>`) 
+      //  } else {
+      //    document.write(`<h1>Plese Enter Valid Age b/w (1-100)</h1>`)
+      //  }
+
+      var age = parseInt(prompt("Enter Valid Age 1-100"))
+       document.write("parseInt is:", typeof parseInt, parseInt);
+// console.log("window.parseInt is:", typeof window.parseInt, window.parseInt);
+
+(age >= 18)
+  ? document.write(`<h1>${age} is Eligible for Voting</h1>`)
+  : document.write(`<h1>${age} is not eligible for Voting</h1>`);
+
+  </script> -->
+
+
+<!-- 
+Q.7 Write a program that accepts a number from user and calculate whether it is positive or negative or zero 
+-->
+
+<!-- <script>
+    var num = parseInt(prompt("Enter A Number"))
+    if (num > 0){
+      document.write(`<h1>${num} is Positive Number</h1>`)
+    } else if (num < 0){
+      document.write(`<h1>${num} is Nagitive Number</h1>`)
+    } else {
+      document.write(`<h1>${num} is Zero Number</h1>`)
+    }
+</script> -->
+
+<!-- 
+Q.8 Write a program to calculate whether character is in lowercase or uppercase.
+-->
+
+<!-- <script>
+   var char = prompt("Enter one charecter only!!")
+   var ASCII = char.charCodeAt(0)
+   document.write(`<h1>ASCII : ${ASCII}</h1>`)
+   if (ASCII>=65 && ASCII<=90){
+      document.write(`<h1>(${char}) is In UpperCase</h1>`)
+   }else if(ASCII>=97 && ASCII<=122) {
+      document.write(`<h1>(${char}) is in LowerCase</h1>`)
+   }  else {
+      document.write(`<h1>Invalid Input</h1>`)
+   }
+</script> -->
+
+<!-- 
+Q.9 Write a program to calculate whether year is leap year or not.
+-->
+
+<!-- <script>
+   var year = parseInt(prompt("Enter Year"))
+   if ( year % 4 == 0 || (year % 100 == 0 && year % 400 !== 0)) {
+      document.write(`<h1>${year} is Leap Year</h1>`)
+   } else {
+            document.write(`<h1>${year} is Not Leap Year</h1>`)
+   }
+</script> -->
+
+<!-- 
+Q.10 Write a program to calculate whether a character is vowel or consonant.
+-->
+
+<!-- <script>
+   var char = prompt("Enter First Character Check Only")
+   var ASCII = char.charCodeAt(0)
+
+   if (ASCII>=65 && ASCII<=97 || ASCII>=97 && ASCII<=122) {
+      if(char=='A' || char=='E' || char=='I' || char=='O' || char=='U' || char=='a' || char=='e' || char=='i' || char=='o' || char=='u') {
+         document.write(`<h1>${char} is Vovel</h1>`)
+      }else {
+         document.write(`<h1>${char} is Constant </h1>`)
+      }
+   } else {
+      document.write(`<h1>${char} it is Invalid Input</h1>`)
+   }
+</script> -->
+
+<!-- 
+Q.11 Write a program that accepts five subjects’ marks from user and calculate the total marks then
+calculate
+Percentage Display message according to following condition.
+Percentage >=60 then print message Grade A
+Percentage >=50 then print message Grade B
+Percentage >= 40 then print message Grade C
+Percentage < 40 then print message Grade D
+-->
+
+<!-- <script>
+   var H = parseInt(prompt("Enter Hindi Number 0-100"))
+   var E = parseInt(prompt("Enter English Number 0-100"))
+   var P = parseInt(prompt("Enter Physics Number 0-100"))
+   var C = parseInt(prompt("Enter Chemestry Number 0-100"))
+   var M = parseInt(prompt("Enter Maths Number 0-100"))
+
+   var total = H + E + P + C + M
+   var percentage = total / 5 
+
+   if (percentage >= 60 && percentage <=100){
+      document.write(`<h1>${percentage}% & Grade A</h1>`)
+   }else if (percentage>=50 && percentage<=60) {
+        document.write(`<h1>${percentage}% & Grade B</h1>`)
+   }else if (percentage>=40 && percentage<=50) {
+        document.write(`<h1>${percentage}% & Grade c</h1>`)
+   }else if (percentage<=40 && percentage>=29) {
+        document.write(`<h1>${percentage}% & Grade D</h1>`)
+   }else {
+      document.write(`<h1>${percentage}% & FAIL</h1>`)
+   }
+</script> -->
+
+<!-- 
+Q.12 Write a program for generating electricity Bill Accept 
+last month unit and current month unit from user, then calculate and print bill amount according to following condition
+0-150 charges 4 rs/unit
+151-300 charges 6 rs/unit
+301-500 8rs/unit
+>500 charges 10rs/unit
+-->
+
+<!-- <script>
+   var current_month= parseInt(prompt("Enter current month Unit"))
+   var last_month= parseInt(prompt("Enter last  Month Unit"))
+   var unit = current_month-last_month
+   if (unit <= 150){
+         document.write("<h1>"+ unit * 4 +" Rupay is total bill Amount</h1>")
+   }else if (unit >=151 && unit <=300){
+       document.write("<h1>"+ unit * 6 +" Rupay is total bill Amount</h1>")
+   }else if (unit >=301 && unit <= 500){
+       document.write("<h1>"+ unit * 8 +" Rupay is total bill Amount</h1>")
+   }else if(unit > 500) {
+       document.write("<h1>"+ unit * 10 +" Rupay is total bill Amount</h1>")
+   }
+
+</script> -->
+
+<!--
+Q.13 Write a program to accept basic salary from user, if basic salary is between 0 and 15000 then TA is
+8% of basic salary, DA is 4% of basic salary. If salary is above 15000 then TA is 10% of basic salary, DA is
+5% of basic. Calculate gross salary as gs=basic salary+TA+DA?  
+-->
+<!-- <script>
+    var salary = parseInt(prompt("Enter salary amount"))
+    if (salary <= 15000) {
+      var TA = 0.08 * salary
+      var DA = 0.04 * salary
+      var net_salary = salary + TA + DA
+      document.write(`<h1>${net_salary} Rupay is Your Net Salary</h1>`)
+    }else {
+      TA = 0.10 * salary
+      DA = 0.05 * salary
+      net_salary = salary + TA + DA
+      document.write(`<h1>${net_salary} Rupay is Your Net Salary</h1>`)
+    }
+</script> -->
+
+<!-- 
+Q.14 Write a program to perform all arithmetic operations according to user choice (for ex-for addition
+press ‘+’…) by using switch case.
+-->
+
+<script>
+   var first_num = parseInt(prompt("Enter Your First Number"))
+   var second_num = parseInt(prompt("Enter your Second Number"))
+   var task = prompt("Enter your Choise '+' for Addition '-' for Subtraction '/' for Division '*' for Multiplication '%' for Reminder ")
+
+   switch (task) {
+      case '+': document.write(`<h1>Addition of ${first_num} + ${second_num} = ${first_num + second_num}</h1>`)
+         break;
+      case '-': document.write(`<h1>Subtraction of ${first_num} - ${second_num} = ${first_num - second_num}</h1>`)
+         break;
+      case '/': document.write(`<h1>Division of ${first_num} / ${second_num} = ${first_num / second_num}</h1>`)
+         break;
+      case '*': document.write(`<h1>Multiplication of ${first_num} * ${second_num} = ${first_num * second_num}</h1>`)
+         break;
+      case '%': document.write(`<h1>Reminder of ${first_num} % ${second_num} = ${first_num % second_num}</h1>`)
+         break;        
+      default: document.write(`<h1>Please choose valid Input</h1>`)
+         break;
+   }
+</script>

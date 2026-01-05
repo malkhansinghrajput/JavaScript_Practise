@@ -1,0 +1,13 @@
+<!-- 
+Q.10 Write a program accepts an amount in rupees (Hint Rs 4567) and find out how many currency of
+Rs 2000,500,200,100,50,20,10,5,2,1.
+-->
+<script>
+    var amt = 4567
+    var note2000 = 0
+    note2000 = parseInt(amt/2000) //2
+    amt = amt%2000 //567
+    document.write("<h1>Note 2000 is:"+note2000+"</h1>")
+    document.write("<h1>Remaining Amount is:"+amt+"</h1>")
+
+</script>

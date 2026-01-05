@@ -1,0 +1,40 @@
+<!-- 
+Array:It is a sequence which is used to store bulk of hetergenous(different types)data,where each data is given by numeral index value which is used to access data.
+Store Data at index 0 to n-1 where n is length of an array.
+------
+Note:Array is mutable.
+------
+Syntax:
+var arrname = [e1,e2.....en]
+-->
+
+<script>
+    var studmarks = [45,56,67,78,89]
+    document.write("<h1>Studmarks:"+studmarks+"</h1>")
+    document.write("<h1>Data Type:"+typeof(studmarks)+"</h1><hr>")
+    
+    //access single data
+    document.write("<h1>Studmarks[2]:"+studmarks[2]+"</h1><hr>")
+    
+    //access all data
+    for(var a=0; a<studmarks.length; a++){
+        document.write("<h1>Studmarks["+a+"]:"+studmarks[a]+"</h1>")
+    }
+    document.write("<hr>")
+
+    document.write("<h1>For in Loop:</h1>")
+    //forin loop:loop with data and index
+    for (var a in studmarks) 
+    {
+        document.write("<h1>Studmarks["+a+"]:"+studmarks[a]+"</h1>")
+    }
+    document.write("<hr>")
+    document.write("<h1>For of Loop:</h1>")
+    //forof loop:loop with data and no index
+    for (var data of studmarks) 
+    {
+        document.write("<h1>"+data+"</h1>")
+    }
+
+
+</script>

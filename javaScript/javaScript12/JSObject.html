@@ -1,0 +1,59 @@
+<!-- 
+JSObject:It is sequence which is used to store bulk amount of hetergenous data in the form of key value pair.
+No Index.
+Order: Random.
+It is mutable.
+---------------
+Syntax:
+var objname = {
+  keyname:value,
+  keyname1:value,
+  ....
+  keynamen:value
+}
+key:
+1.It is immutable
+2.It can be any data like string,number,bool,array.
+value:
+1.It is mutable.  
+-->
+
+<script>
+  var person = {
+      name:"Rahul Sharma",
+      age:23,
+      address:"Indore M.P"
+  }
+  document.write("<h1>Person:"+person+"</h1>")
+  document.write("<h1>Data Type:"+typeof(person)+"</h1>")
+
+  //access single record
+  document.write("<h1>Name:"+person["name"]+"</h1>")
+  document.write("<h1>Age:"+person.age+"</h1>")
+
+  //access all keys
+  document.write("<h1>****** Keys *******</h1>")
+  var arrKey = Object.keys(person)
+  for (const key of arrKey) {
+    document.write("<h1>"+key+"</h1>")
+  }
+  document.write("<hr>")
+
+   //access all values
+   document.write("<h1>****** Values *******</h1>")
+  var arrVal = Object.values(person)
+  for (const val of arrVal) {
+    document.write("<h1>"+val+"</h1>")
+  }
+  document.write("<hr>")
+  //access key and value
+  for (const key in person) {
+    document.write("<h1>Key:"+key+" Value:"+person[key]+"</h1>")
+  }
+
+  //Note: we can not use forof loop in JSObject.
+  document.write("<hr>")
+  for(var a=0; a<Object.values(person).length; a++){
+    document.write("<h1>Key:"+Object.keys(person)[a]+" Value:"+Object.values(person)[a]+"</h1>")
+  }
+</script>

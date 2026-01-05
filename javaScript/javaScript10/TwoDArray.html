@@ -1,0 +1,29 @@
+<!-- 
+TwoDArray:It is a collection of OneDArray.
+Syntax:
+var twoDArrName[row][col]=[[],[],[]]
+var r = [[0,0,0],[0,0,0],[0,0,0]]
+-->
+
+<script>
+    var r1 = [10,20,30]
+    var r2 = [40,50,60]
+    var r3 = [70,80,90]
+   
+    var twoDArr = [r1,r2,r3]
+    document.write("<h1>twoDArr[1][1]:"+twoDArr[1][1]+"</h1>")
+    document.write("<h1>twoDArr[2][1]:"+twoDArr[2][1]+"</h1><hr>")
+
+    var sum = 0
+    //all elements
+    for (const row in twoDArr) {
+        console.log(twoDArr[row])
+        for (const col in twoDArr[row]) {
+            document.write("<h1>twoDArr["+row+"]["+col+"]:"+twoDArr[row][col]+"</h1>")
+            sum+=twoDArr[row][col]
+        }
+    }
+    document.write("<h1>Sum is:"+sum+"</h1><hr>")
+
+
+</script>

@@ -1,0 +1,159 @@
+<!-- 
+nested for loop:
+  c1c2c3c4c5
+r1 * * * * *
+r2 * * * * *
+r3 * * * * *
+r4 * * * * *
+================
+row   col
+ 1     1   
+       2
+       3 
+       4
+       5
+ 2     1
+       2
+       3
+       4
+       5       
+       
+* * * * * 
+* * * * *  
+-->
+
+
+<script>
+    for(var row=1; row<=4; row++) //row
+    { 
+        for(var col=1; col<=5; col++)//col
+        {
+            document.write("<span style='font-size:32;font-weight:bold'>* </span>")
+        }
+        document.write("<br>")
+    }
+    document.write("<hr>")
+/*
+
+*
+**
+***
+****
+*****
+
+*/    
+for(var row=1; row<=5; row++) //row
+{ 
+    for(var col=1; col<=row; col++)//col
+        {
+            document.write("<span style='font-size:32;font-weight:bold'>*</span>")
+        }
+        document.write("<br>")
+}
+document.write("<hr>")
+/*
+    *
+   **
+  ***
+ ****
+*****    
+*/
+for(var row=5; row>=1; row--) //row
+{
+    //space
+    for(var space=1; space<row; space++){
+        document.write("<span style='font-size:32;font-weight:bold'>&nbsp;&nbsp;</span>")
+    } 
+    //content
+    for(var content=row; content<=5; content++){
+        document.write("<span style='font-size:32;font-weight:bold'>*</span>")
+    }
+    document.write("<br>")
+}
+document.write("<hr>")
+
+/*
+    *
+   ***
+  *****
+ *******
+*********    
+*/
+for(var row=5; row>=1; row--) //row
+{
+    //space
+    for(var space=1; space<row; space++){
+        document.write("<span style='font-size:32;font-weight:bold'>&nbsp;&nbsp;</span>")
+    } 
+    //content
+    for(var content=row; content<=5; content++){
+        document.write("<span style='font-size:32;font-weight:bold'>*</span>")
+    }
+    //content
+    for(var content=row; content<5; content++){
+        document.write("<span style='font-size:32;font-weight:bold'>*</span>")
+    }
+    document.write("<br>")
+}
+document.write("<hr>")
+/*
+    *
+   ***
+  *****
+ *******
+********* 
+ *******
+  *****
+   ***
+    *   
+*/
+for(var row=5; row>=1; row--) //row
+{
+    //space
+    for(var space=1; space<row; space++){
+        document.write("<span style='font-size:32;font-weight:bold'>&nbsp;&nbsp;</span>")
+    } 
+    //content
+    for(var content=row; content<=5; content++){
+        document.write("<span style='font-size:32;font-weight:bold'>*</span>")
+    }
+    //content
+    for(var content=row; content<5; content++){
+        document.write("<span style='font-size:32;font-weight:bold'>*</span>")
+    }
+    document.write("<br>")
+}
+for(var row=2; row<=5; row++) //row
+{
+    //space
+    for(var space=1; space<row; space++){
+        document.write("<span style='font-size:32;font-weight:bold'>&nbsp;&nbsp;</span>")
+    } 
+    //content
+    for(var content=row; content<=5; content++){
+        document.write("<span style='font-size:32;font-weight:bold'>*</span>")
+    }
+    //content
+    for(var content=row; content<5; content++){
+        document.write("<span style='font-size:32;font-weight:bold'>*</span>")
+    }
+    document.write("<br>")
+}
+document.write("<hr>")
+
+/*
+5
+54
+543
+5432
+54321
+*/
+for(var row=5; row>=1; row--) //row
+{ 
+    for(var col=5; col>=row; col--)//col
+        {
+            document.write("<span style='font-size:32;font-weight:bold'>"+col+"</span>")
+        }
+        document.write("<br>")
+}
+</script>

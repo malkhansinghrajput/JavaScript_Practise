@@ -1,0 +1,52 @@
+<!-- 
+JS object inside array 
+-->
+
+<script>
+var s1 = {
+    name : "Mlakhan singh dewda",
+    rollno : 121,
+    course : "MCA",
+    fees : 78000.90
+}
+var s2 = {
+    name : "Rajpal singh dewda",
+    rollno : 128,
+    course : "BCA",
+    fees : 98980.90
+}
+var s3 = {
+    name : "Priya kumari",
+    rollno : 178,
+    course : "B.Tech",
+    fees : 78990.90
+}
+var s4 = {
+    name : "Hariom ",
+    rollno : 127,
+    course : "M.Tech",
+    fees : 76900.90
+}
+var s5 = {
+    name : "Ankit sharma",
+    rollno : 118,
+    course : "BSC",
+    fees : 23400.90
+}
+
+var arrStud =[]
+ arrStud.push(s1,s2,s3,s4,s5)
+ console.log(arrStud)
+ var result = "<table align=center border=1 cellspacing=0 cellpadding=10 style='font-size:27'>"
+ result +="<tr><th>RollNo</th><th>Name</th><th>Course</th><th>Fees</th></tr>"
+ for(let obj of arrStud){
+    result += "<tr align=center>"
+    result += "<td>"+obj.rollno+"</td>"    
+    result += "<td>"+obj.name+"</td>" 
+    result += "<td>"+obj.course+"</td>" 
+    result += "<td>"+obj.fees+"</td>" 
+    result += "</tr>"
+ }
+ result += "</table>"
+document.write(result)
+</script>

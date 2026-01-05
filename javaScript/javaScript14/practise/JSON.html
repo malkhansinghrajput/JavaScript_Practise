@@ -1,0 +1,138 @@
+<!-- 
+JSON:JavaScript Object Notation :-
+JavaScript Object Notation (JSON) is standard text based format for representing structured data based on javaScript object Syntax. it is commonly used for transmitting data in web application (e.g., sending some data from the server to the client, so it can be displayed on a web page, or vice versa)
+-->
+
+<style>
+    body {
+         margin: 0;
+    }
+
+    .gallery {
+        width: 280px;
+        border: 1px solid lightblue;
+        border-radius: 10px;
+        /* box-shadow: 4px 4px 4px 0 lightgray; */
+        box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.2),
+            0 1px 6px 0 rgba(0, 0, 0, 0.19);
+        /* box-shadow: none|h-offset v-offset blur spread color |inset|initial|inherit;*/
+        margin-bottom: 10px;
+    }
+    
+    .gallery img {
+        width: 100%;
+        border-radius: 10px;
+    }
+
+    .gallery:hover {
+        border: 1px solid lightgray;
+        box-shadow: 0 1px 6px 0 gray,
+            0 1px 6px 0 gray;
+    }
+    h3 {
+        margin: 5px;
+    }
+
+    button {
+        background-color: white;
+        padding: 10px;
+        color: brown;
+        border: 1px solid brown;
+        font-size: 16px;
+        font-weight: bold;
+        border-radius: 10px;
+        margin-bottom: 10px;
+    }
+    .flexdemo {
+        display: flex;
+        /* flex-direction: column-reverse; */
+        /* justify-content: center; */
+        /* justify-content: space-around; */
+        /* justify-content: space-between; */
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+    }
+    .demo {
+        display: flex;
+    }
+    .demo a {
+        white-space: nowrap;
+        color: gray;
+        text-decoration: none;
+        font-size: 24px;
+        overflow: hidden;
+        text-overflow: ellipsis; 
+    }
+    
+</style>
+ 
+<script>
+    var p1 = {
+        "imgurl":"https://rukminim2.flixcart.com/image/612/612/xif0q/t-shirt/h/z/f/s-t7-navy-13x-autna-original-imah7x35z9tmhecz.jpeg?q=70",
+        "brand":"FASIUM",
+        "description":"Men Colorblock, Striped Round Neck Poly Cotton Navy Blue T-Shirt",
+        "sp":299,
+        "variant_name":"T-Shirt",
+        "mrp":999,
+        "discount":20,
+        "size":"XS, S, M, L, XXL, 3XL"
+    }
+    var p2 = {
+        "imgurl":"https://m.media-amazon.com/images/I/6192vQUNCQL._UX569_.jpg",
+        "brand":"LEE",
+        "description":"Men Colorblock, Striped Round Neck Poly Cotton Navy Orange T-Shirt",
+        "sp":1299,
+        "variant_name":"TShirt",
+        "mrp":1999,
+        "discount":30,
+        "size":"XS, S, M, L, XXL, 3XL"
+    }
+    var p3 = {
+        "imgurl":"https://5.imimg.com/data5/XS/CN/MY-51547825/printed-500x500.jpg",
+        "brand":"John Player",
+        "description":"Men White, Formal Shirt asdfashdkfjhaksjdfkajdfhk asdf",
+        "sp":1299, 
+        "mrp":1999,
+        "variant_name":" Formal Shirt",
+        "discount":22,
+        "size":"XS, S, M, L, XXL, 3XL"
+    }
+    var p4 = {
+        "imgurl":"https://5.imimg.com/data5/SELLER/Default/2020/8/KG/AJ/MD/64760880/adidas-sports-shoes-500x500.jpg",
+        "brand":"Adidas",
+        "description":"Men , Adidas Sport Shoes asdfasdfasdcasdfasfasdf",
+        "variant_name":"Sport Shoes",
+        "sp":2299,
+        "mrp":3999,
+        "discount":24,
+        "size":"XS, S, M, L, XXL, 3XL"
+    }
+    var p5 = {
+          "imgurl":"https://m.media-amazon.com/images/I/61ZjlBOp+rL._SX425_.jpg",
+        "brand":"Apple",
+        "description":"Men Smart Watch asdasdfsd",
+        "sp":3299,
+        "variant_name":"Watch",
+        "mrp":4999,
+        "discount":22,
+        "size":"Regular"
+    }
+
+    var arrp = [p1,p2,p3,p4,p5]
+    console.log(arrp)
+
+    var result = "<div class='flexdemo'>"
+        for(let obj of arrp){
+            result += "<div class='gallery'>"
+            result += "<a href ='"+obj.imgurl+"'>"
+            result += "<img src='"+obj.imgurl+"'/></a>"
+            result += "<div style ='text-align: center';>"
+            result += "<h3>"+obj.brand+"</h3><h3>"+obj.variant_name+"</h3>"
+            result += "<div class='demo'><a title="+obj.desccription+"style='font-size:18;' 'color:gray;''>"+obj.description+"</a></div>"
+            result += "<h3>&#8377;"+obj.sp+"<small><del>&#8377;"+obj.mrp+"</del></small> <span style='color:green;''>"+obj.discount+"% off</span></h3>"
+            result += "<h3 style= 'color: gray;'>Size:"+obj.size+"</h3>"
+            result += "<button>Add To Cart</button>&nbsp;&nbsp;<button>Buy Now</button></div></div>"
+        }
+        result += "</div>"
+        document.write(result)
+</script>

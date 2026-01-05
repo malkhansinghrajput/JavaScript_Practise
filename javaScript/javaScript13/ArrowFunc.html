@@ -1,0 +1,38 @@
+<!-- 
+Arrow Function: It has shortest syntax as compared to function expression.It is introducted in ES6.
+Syntax:
+()=> statements
+===========
+-->
+
+<script>
+    var greeting = ()=> document.write("<h1>Good Morning!!</h1>")
+    greeting()
+
+    //single argument
+    var cube = (a)=>a*a*a 
+    document.write("<h1>Cube is:"+cube(6)+"</h1>")
+
+    //multiple arguments
+    var add = (a,b)=> a+b 
+    document.write("<h1>Addition is:"+add(6,23)+"</h1>")
+
+    // var calculate = (x,y)=>{
+    //     if (x>y) {
+    //         return x*x 
+    //     } else {
+    //         return y*y
+    //     }
+    // }
+    var calculate = (x,y)=> x>y ? x*x : y*y 
+    document.write("<h1>Result is:"+calculate(6,13)+"</h1>")
+
+    // var persondetails=(name,age,address)=>"Name is:"+name+" Age:"+age+" Address is:"+address+""
+
+    var persondetails=(name,age,address)=>{
+       return "Name is:"+name+" Age:"+age+" Address is:"+address+""
+    }
+
+    document.write("<h1>Details is:"+persondetails("Rahul Sharma",23,"Indore M.P")+"</h1>")
+
+</script>

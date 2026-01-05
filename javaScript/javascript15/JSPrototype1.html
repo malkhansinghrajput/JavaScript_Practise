@@ -1,0 +1,20 @@
+<!-- 
+this: It is a reference to current class object
+ES5 Syntax:not supported classes, function constructor.
+In JavaScript ES5, a function constructor serves as a blueprint for creating objects. It is a regular function, but it is invoked using the new keyword. By convention, function constructors are named with a capital first letter to distinguish them from regular functions.
+-->
+
+<script>
+   var Mobile = function(model_no) {
+      this.model_no = model_no
+      this.price = 5000;
+   }
+
+   //new : It is a keyword which is used to allocate memory
+   var vivo = new Mobile("Vivo")
+   var oppo = new Mobile("Oppo")
+   oppo.color = "white"
+   vivo.color = "white"
+   console.log(vivo)
+   console.log(oppo)
+</script>

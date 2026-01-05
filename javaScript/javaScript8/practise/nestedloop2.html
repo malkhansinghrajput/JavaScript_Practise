@@ -1,0 +1,164 @@
+<!-- 
+Nested For Loop:-
+  c1 c2 c3 c4 c5
+R1 * * * * * *
+R2 * * * * * *
+R3 * * * * * *
+R4 * * * * * *
+R5 * * * * * *
+
+============
+
+Row    column
+1      C1
+        1
+        2
+        3
+        4
+        5
+
+2      C2
+        1
+        2
+        3
+        4
+        5
+
+       
+ * * * * * *
+ * * * * * *
+-->
+
+<script>
+    //  * * * * *
+    //  * * * * *
+    //  * * * * * 
+    //  * * * * *
+    //  * * * * *
+
+    for(let row=1; row<=5; row++){
+        for(let col=1; col<=5;col++){
+            document.write("<span style= 'font-size:32'; 'font-weight:bold''> * </span>")
+        }
+        document.write("<br>")
+    }
+    document.write("<hr>")
+
+    /*
+    
+    *
+    * *
+    * * *
+    * * * *
+    * * * * *
+
+    */
+
+    for(let row=1; row<=5; row++){
+        for(let col=1; col<=row; col++){
+            document.write("<span style= 'font-size:32'; 'font-weight:bold''> * </span>")
+        }
+        document.write("<br>")
+    }
+    document.write("<hr>")
+
+    /*
+    *
+   **
+  ***
+ ****
+*****    
+*/
+
+for(let row=5; row>=1; row--){
+    for(let space=1; space<row; space++){
+        document.write("<span style= 'font-size:32'; 'font-weight:bold''>&nbsp;&nbsp;</span>")
+    }
+    for(let col=row; col<=5; col++){
+      document.write("<span style= 'font-size:32'; 'font-weight:bold''>*</span>")
+    }
+    document.write("<br>")
+}
+document.write("<hr>")
+
+/*
+    *
+   ***
+  *****
+ *******
+*********    
+*/
+
+for(let row=5; row>=1; row--){
+    //space
+    for(let space=1; space<row ; space++){
+      document.write("<span style= 'font-size:32'; 'font-weight:bold'>&nbsp;&nbsp;</span>")
+    }
+    //content
+    for(let content=row; content<=5; content++){
+        document.write("<span style= 'font-size:32'; 'font-weight:bold'>*</span>")
+    }
+    //content
+    for(let content=row; content<5; content++){
+       document.write("<span style= 'font-size:32'; 'font-weight:bold'>*</span>") 
+    }
+    document.write("<br>")
+}
+document.write("<hr>")
+
+/*
+    *
+   ***
+  *****
+ *******
+********* 
+ *******
+  *****
+   ***
+    *   
+*/
+
+for(let row=5; row>=1; row--){
+    // space
+    for(let space=1;space<row ; space++){
+        document.write("<span style= 'font-size:32'; 'font-weight:bold'>&nbsp;&nbsp</span>")
+    }
+    // content
+    for(let content=row; content<=5; content++){
+        document.write("<span style= 'font-size:32'; 'font-weight:bold'>*<span>")
+    }
+    for(let content=row; content<5; content++){
+        document.write("<span style= 'font-size:32'; 'font-weight:bold'>*<span>")
+    }
+    document.write("<br>")
+}
+for(let row=2; row<=5; row++){
+    // space
+    for(let space=1;space<row ; space++){
+        document.write("<span style= 'font-size:32'; 'font-weight:bold'>&nbsp;&nbsp</span>")
+    }
+    // content
+    for(let content=row; content<=5; content++){
+        document.write("<span style= 'font-size:32'; 'font-weight:bold'>*<span>")
+    }
+    for(let content=row; content<5; content++){
+        document.write("<span style= 'font-size:32'; 'font-weight:bold'>*<span>")
+    }
+    document.write("<br>")
+}
+document.write("<hr>")
+/*
+5
+54
+543
+5432
+54321
+*/
+
+for(let row=5; row>=1; row--){
+    for(let col=5; col>=row; col--){
+        document.write("<span style= 'font-size:32'; 'font-weight:bold';>"+col+"</span>")
+    }
+    document.write("<br>")
+}
+</script>

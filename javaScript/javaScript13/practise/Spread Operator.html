@@ -1,0 +1,27 @@
+<!-- 
+Spread Operator(ES6) : The JavaScript spread operator (...) allow us to quickly copy all or part of an existing array or object into another array or object. 
+-->
+
+<script>
+    var a1 = [1,2,3,4,5]
+    var a2 = [6,7,8,9,10]
+    var a3 = [...a1,...a2,11,12]
+    console.log(a3)
+
+    var jsobj1 = {
+        name : "malkhan singh",
+        age: 23,
+        address: "indore m.p"
+    }
+    var emp = {
+        id : 121,
+        designation : "React js Developer",
+        salary : 34567.34
+    }
+    var res = {...jsobj1,...emp,gender : "Male"}
+    console.log(res)
+
+    // This is condition will always return 'false' since JavaScript compares objects by reference, not value
+    console.log([]==[])
+    console.log([]==[])
+</script>

@@ -1,0 +1,47 @@
+<!-- 
+Javascript:It is used to make dynamic changes in a web page.
+It is used as client side and server side scripting language.
+Difference between scripting language and programming language:
+1.Scripting languages are a type of programming language that are used to enhance programs, while programming languages are used to create applications.
+2.Scripting languages are a type of programming language that are interpreted while programming languages are compiled.
+============================
+It Supports OOPS (Object Oriented Programming Language)(in ES6)
+ECMAScript:European Computer Manufacturer's Association
+ECMAScript is a Standard for a scripting languages.
+ES1 : 1997....ES5 : 2009, ES6: 2015
+============================
+Variable:It is a reserved memory location which is used to store data of specific type.
+It is dynamically typed.
+keyword:It is reserved words for compiler.
+keyword to create variable:var(ES5),let and const(ES6)
+var:It does not have block scope.
+===============
+DOM:Document(HTML Document) 
+Object(HTML Element) 
+Modal(Tree Structure)
+===============
+Document Object:When we load any HTML document into a browser first of all, a window object is created then automatically a document object is created which is used to access a HTML Element.
+-------------
+The JavaScript variable window is an object , representing a window containing a DOM document; the document property points to the DOM document loaded in that window.
+------------
+All global JavaScript objects, functions, and variables automatically become members of the window object. Global variables are properties of the window object.
+ex:prompt(),alert(),fetch() etc
+===================================
+-->
+
+<script>
+    var x=100 
+    {
+        var x=200
+        document.write("<h1>Value of x inside block:"+x+"</h1>")
+    }
+    document.write("<h1>Value of x outside block:"+x+"</h1><hr>")
+
+    var a=100
+    for(var a=1; a<5; a++)
+    {
+        document.write("<h1>Value of a inside block:"+a+"</h1>")
+    }
+    document.write("<h1>Value of a outside block:"+a+"</h1>")
+    //1...4 ,5 
+</script>

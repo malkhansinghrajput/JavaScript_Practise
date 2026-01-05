@@ -1,0 +1,28 @@
+<!--   
+ASCII:Amercian Standard Code For Information Interchange.
+A:65
+a:97
+-->
+
+<script>
+    var str1 = "A"
+    var asciivalue = str1.charCodeAt(0)
+    document.write("<h1>ASCII Value of A is:"+asciivalue+"</h1><hr>")
+
+    str1 = "neha" //5
+                    //5<5
+    for(var index=0; index<str1.length; index++)
+    {
+        var asciivalue = str1.charCodeAt(index)//0
+        document.write("<h1>ASCII Value of "+str1[index]+" is:"+asciivalue+"</h1><hr>")
+    }
+
+    //Single Character Value
+    var chVal = String.fromCharCode(65)
+    document.write("<h1>Character Value of 65 is:"+chVal+"</h1><hr>")
+
+    //Multiple Character Value
+    var chVal = String.fromCharCode(114,97,104,117,108)
+    document.write("<h1>Character Value of 114,97,104,117,108 is:"+chVal+"</h1><hr>")
+
+</script>

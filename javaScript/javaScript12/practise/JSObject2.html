@@ -1,0 +1,37 @@
+<!-- 
+Nested JsObject 
+ Array inside js object
+-->
+
+<script>
+    var student = {
+        name : "Malkhan Sngh Dewda",
+        rollno : 121 ,
+        course : "BCA",
+        fees : 70000.89,
+        sem : 4,
+        marks : [89,78,90,76,78],
+        address : {
+            country : "India",
+            state : "M.P",
+            city : "unhel",
+            pincode : 456221,
+            location : {
+                lat : "22.7196° N",
+                lng : "75.8577° E"
+            }
+        }
+    }
+
+    document.write(`<h3>Name : ${student.name}<h3>`)
+    document.write(`<h3>country : ${student.address.country}<h3>`)
+    document.write(`<h3>State : ${student["address"]["state"]}<h3>`)
+    document.write(`<h3>Pincode : ${student.address.pincode}<h3>`)
+    document.write(`<h3>Latitude : ${student.address.location.lat}<h3>`)
+    document.write(`<h3>Longitude : ${student.address.location.lng}<h3>`)
+    document.write("<h2>*********Marks**********</h2>")
+
+    for(const m of student["marks"]){
+        document.write(`<h3>MARKS : ${m}</h3>`)
+    }
+</script>

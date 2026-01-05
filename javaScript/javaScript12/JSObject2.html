@@ -1,0 +1,36 @@
+<!-- 
+Nested JSObject
+Array inside JSObject
+-->
+<script>
+    var student = {
+        name: "Neha Sharma",
+        rollno: 121,
+        course: "BCA",
+        fees: 34567.43,
+        sem: 4,
+        marks: [45, 56, 67, 78, 89],
+        address: {
+            country: "India",
+            state: "M.P",
+            city: "Indore",
+            pincode: 452001,
+            location: {
+                lat: "22.7196° N",
+                lng: "75.8577° E"
+            }
+        }
+    }
+    document.write("<h1>Name:" + student.name + "</h1>")
+    document.write("<h1>Country:" + student["address"]["country"] + "</h1>")
+    document.write("<h1>State:" + student.address.state + "</h1>")
+    document.write("<h1>City:" + student["address"]["city"] + "</h1>")
+    document.write("<h1>Pincode:" + student["address"]["pincode"] + "</h1>")
+    document.write("<h1>Latitude:" + student["address"]["location"]["lat"] + "</h1>")
+    document.write("<h1>Longitude:" + student["address"]["location"]["lng"] + "</h1>")
+    document.write("<h1>****** Marks ********</h1>")
+    for (const m of student["marks"]) {
+        document.write("<h1>" + m + "</h1>")
+    }
+
+</script>

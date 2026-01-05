@@ -1,0 +1,77 @@
+<!-- 
+ Do While Loop : Repition of code ....
+ Syntax :  
+ do {
+    ....Statement
+ }while(condition)) 
+-->
+
+<!-- Print Hello World 5 Times -->
+<script>
+       var a = 1
+       do{
+          document.write("<h1>Hello World : "+a+"</h1>")
+          a++;
+       }while(a<=5)
+
+       document.write("<hr>")
+
+       do{
+           document.write("<h1>Hello Malkhan Singh: "+a+"</h1>")
+          a--;   
+       }while(a>=1)
+       document.write("<hr>")
+
+      //  Find sum of square of number from 1 to 5
+      
+      var num = 1
+      var sum = 0
+      do{
+         sum += num * num
+         num++
+         document.write("<h3>Sum of square : "+sum+"</h3>")
+      }while(num<=5)
+      document.write("<h1>Sum of Total Square : "+sum+"</h1>")
+      document.write("<hr>")
+
+      // Find Factor Of Given Number and its Perfect Number or Not
+      // perfect number = 1+2+3=6
+
+     /*  var num = parseInt(prompt("Enter a Number"))
+       var sum = 0
+       var a = 1 
+       do{
+         if(num % a == 0) {
+         document.writeln(`<h1>Factor is : ${a}</h1>`)
+            sum+=a
+         }
+         a++
+       }while(a<num)
+
+       if (sum===num){
+         document.write(`<h1>${sum} is Perfect Number</h1>`)
+       }else{
+         document.write(`<h1>${sum} is Not Perfect Number</h1>`)
+       }
+         */
+
+      //  find Perfect Number from 1 to 100
+
+      var c = 2
+      do {
+           var num = c
+           var sum = 0
+           var a = 1
+           do{
+              if (num%a==0){
+              // document.write(`<h3>Factor is : ${a}<h3>`)
+                sum += a  
+              }
+              a++
+           }while(a < num)
+           if(sum===num){
+            document.write(`<h1>Perfect Number is : ${sum}</h1>`)
+           }
+           c++
+      }while(c<=100)
+</script>

@@ -1,0 +1,156 @@
+ <!-- 
+  Q.1 Write a program to find out square of given number. 
+  -->
+  <!-- <script>
+     var num = prompt("Enter a Number to calculate there Square")
+     var sqr = num ** 2
+     document.write(`<h1>Square of ${num} is = ${sqr} </h1>`)
+  </script> -->
+
+  <!-- Q.2 Write a program to find out area of circle. -->
+   <!-- <script>
+      var radius = prompt("Enter the Radius of circle")
+      var area = 3.14 * radius ** 2
+      document.write(`<h1>Area of Circle this Radius ${radius} is = ${area} </h1>`)
+   </script> -->
+
+   <!-- Q.3 Write a program to find out simple interest (SI) -->
+
+   <!-- <script>
+       var P = prompt("Enter Principal Amount")
+       var R = prompt("Enter Rate of Interest")
+       var T = prompt("Enter Time in Year")
+
+        var SI = (P * R * T) / 100
+
+        document.write(`Simple Interest : ${SI}`)
+   </script> -->
+
+
+   <!-- Write a program accept 5 subject marks (Hint P=67,C=87,M=90,H=98,E=88) and calculate total marks and percentage. -->
+
+   <!-- <script>
+       var P = parseFloat(prompt("Enter Physics Number"))
+       var C = parseFloat(prompt("Enter Chemestry Number"))
+       var M = parseFloat(prompt("Enter Maths Number"))
+       var H = parseFloat(prompt("Enter Hindi Number"))
+       var E = parseFloat(prompt("Enter English Number"))
+
+         var total = P + C + M + H + E
+         var per = total/5
+         document.write(`<h2>Physics : ${P}, Chemestry : ${C}, Maths : ${M}, Hindi : ${H}, English : ${E}</h2>`)
+         document.write(`<h1>Total Marks : ${total}</h1>`)
+         document.write(`<h1>Percentage is : ${per}% </h1>`)
+   </script>
+ -->
+
+ <!-- Q.5 Write a program for swapping of two integer variables using third variable. -->
+
+ <!-- <script>
+    var num1 = parseFloat(prompt("Enter first Number"))
+    var num2 = parseFloat(prompt("Enter Second Number"))
+    document.write(`<h1>Before Number is Swapping is : ${num1} ${num2}</h1>`)
+    var num3 = num1
+        num1 = num2
+        num2 = num3
+     document.write(`<h1>AFTER Number is Swapped is : ${num1} ${num2}</h1>`)   
+ </script> -->
+
+ <!-- Q.6 Write a program for swapping of two integer variable without third variable. -->
+
+ <!-- <script>
+    var num1 = parseFloat(prompt("Enter first Number"))
+    var num2 = parseFloat(prompt("Enter Second Number"))
+    document.write(`<h1>Before Number is Swapping is : ${num1} ${num2}</h1>`)
+        num1 = num1 + num2
+        num2 = num1 - num2
+        num1 = num1 - num2
+     document.write(`<h1>AFTER Number is Swapped is : ${num1} ${num2}</h1>`)   
+ </script> -->
+
+ <!-- Q.7 Write a program accepts a character and find out corresponding ASCII value. -->
+
+ <!-- <script>
+    var str = prompt("Enter a Char")
+        var Ascii = str.charCodeAt(0)
+       document.write(`<h2>ASCII Value of ${str} is : ${Ascii}<h2>`)
+
+     
+ </script> -->
+
+ <!-- Q.8 Write a program to calculate sum of digits number.(Hint:123 is a given number then o/p=6) -->
+
+  <!-- <script>
+    var num = parseInt(prompt("Enter only three Number"))
+    var copy = num
+    var m1 = num % 10
+     num = parseInt(num/10)
+     var m2 = num % 10
+     num = parseInt(num/10)
+     var m3 = num % 10
+
+   document.write(`<h1>sum of this ${copy} num is = ${m1 + m2 + m3} </h1>`) 
+ </script> -->
+
+ <!-- Q.9 Write a program accepts 4 digits no. and display the no. in reverse order. -->
+
+ <!-- <script>
+    var num = parseInt(prompt("Enter a 4 digit number"))
+      var copy = num
+      var m1 = num % 10
+      var rev= m1 * 10
+      num = parseInt(num/10)
+      document.write("<h2>reverse : ",rev + "</h2>") 
+      var m2 = num % 10
+      rev = (rev + m2) * 10 
+      num = parseInt(num/10)
+      document.write("<h2>reverse : ",rev + "</h2>") 
+      var m3 = num % 10
+      rev = (rev + m3) * 10
+      num = parseInt(num/10)
+      document.write("<h2>reverse : ",rev + "</h2>") 
+      var m4 = num % 10
+       rev = rev + m4
+
+   document.write(`<h2>The reverse of this ${copy} is = ${rev}</h2>`)
+ </script> -->
+
+ <!-- Q.10 Write a program accepts an amount in rupees (Hint Rs 4567) and find out how many currency of
+Rs 2000,500,200,100,50,20,10,5,2,1. -->
+
+<script>
+     var amount = parseInt(prompt("Enter a Amount"))
+     var note_2000 = parseInt(amount / 2000)
+     amount = parseInt(amount % 2000)
+     var note_500 = parseInt(amount/500)
+     amount =  parseInt(amount%500)
+     var note_200 = parseInt(amount/200)
+     amount = parseInt(amount%200)
+     var note_100 = parseInt(amount/100)
+     amount = parseInt(amount%100)
+     var note_50 = parseInt(amount/50)
+     amount = parseInt(amount%50)
+     var note_20 = parseInt(amount/20)
+     amount = parseInt(amount%20)
+     var note_10 = parseInt(amount/10)
+     amount = parseInt(amount%10)
+     var note_5 = parseInt(amount/5)
+     amount = parseInt(amount%5)
+     var note_2 = parseInt(amount/2)
+     amount = parseInt(amount%2)
+     var note_1 = parseInt(amount/1)
+     amount = parseInt(amount%1)
+
+
+     document.write(`<h1>2000 notes ruppes is ${note_2000}</h1>`)
+     document.write(`<h1>500 notes ruppes is ${note_500}</h1>`)
+     document.write(`<h1>200 notes ruppes is ${note_200}</h1>`)
+     document.write(`<h1>100 notes ruppes is ${note_100}</h1>`)
+     document.write(`<h1>50 notes ruppes is ${note_50}</h1>`)
+     document.write(`<h1>20 notes ruppes is ${note_20}</h1>`)
+     document.write(`<h1>10 notes ruppes is ${note_10}</h1>`)
+     document.write(`<h1>5 notes ruppes is ${note_5}</h1>`)
+     document.write(`<h1>2 notes ruppes is ${note_2}</h1>`)
+     document.write(`<h1>1 notes ruppes is ${note_1}</h1>`)
+   
+</script>

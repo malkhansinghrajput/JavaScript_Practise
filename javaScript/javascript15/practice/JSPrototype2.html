@@ -1,0 +1,24 @@
+<!-- 
+this: It is a reference to current Class Object  
+-->
+
+<script>
+    var mobile = function(model_no){
+        // instance Member 
+        this.model_no= model_no
+        this.price = 5000;
+    }
+
+    var vivo = new mobile("Vivo")
+    var oppo = new mobile("oppo")
+    //  functionName.prototype.key="value"
+    //  Prototype Member
+      mobile.prototype.color="white"
+      oppo.feature='fhdhflsdflshfghafgh'
+      document.write("<h1>"+vivo.color+"</h1>")
+      document.write("<h1>"+oppo.color+"</h1>")
+
+      console.log(vivo)
+      console.log(oppo)
+</script>
+

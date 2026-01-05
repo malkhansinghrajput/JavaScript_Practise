@@ -1,0 +1,176 @@
+<!-- 
+String :- It is sequence which is used to store alphanumbric ,s[ecial Symbol which cintain numerial index value to access data
+* Array of character 
+*String is immutable 
+-->
+
+<script>
+  var name = "Malkhan singh dewda";
+  document.write("<h1>Name = " + name + "</h1>");
+  document.write("<h2> Type of = " + typeof name + "<h2>");
+  document.write("<hr>");
+
+  document.write("<h2>length = " + name.length + "</h2>");
+  document.write("<hr>");
+
+  for (let index in name) {
+    document.write(
+      "<h2>Index is : " + index + " Value : " + name[index] + "</h2>"
+    );
+  }
+  document.write("<hr>");
+
+  document.write(
+    "<span style= font-size:30;font-weight:bold;>Vowels Are : </span>"
+  );
+
+  // find vowels in name
+  var count = 0;
+  for (const index in name) {
+    var str = name[index];
+    if (
+      str == "A " ||
+      str == "a" ||
+      str == "E" ||
+      str == "e" ||
+      str == "I" ||
+      str == "i" ||
+      str == "O" ||
+      str == "o" ||
+      str == "U" ||
+      str == "u"
+    ) {
+      document.write("<h2>Vovels Are : " + str + "</h2>");
+      count++;
+    }
+  }
+  document.write("<br>");
+  document.write("<h2>Count is : " + count + "</h2>");
+
+//   slice method : extract portion of a string 
+//  slice(start):  slice(7):start from 7th index
+// slice(start,stop):slice(7):stop-1
+
+var name = "rahul sharma"
+
+// +ve : index 0123456789
+// -ve : index -9-8-7=6-5-4-3-2-1
+// var result = name.slice(3)
+// var result = name.slice(1,8)
+//  var result = name.slice(-9,-1)
+//  var result = name.slice(-9,)
+var result = name.slice(-5,11)
+var result = name.slice(1,-5)
+document.write("<h1>Name is : "+ name +"</h1>")
+document.write("<h1>Index : "+name.length+"   </h1>")
+document.write("<h1>Result : "+ result +"</h1>")
+document.write("<hr>")
+
+//  var result = name.substr(7)
+//  var result = name.substr(0,7)
+// var result = name.substr(-9,-1) //not working
+var result = name.substr(-9)
+document.write("<h1>Result2 : "+ result +"</h1>")
+document.write("<hr>")
+
+var title= "rahul is good boy and good in cricket"
+document.write("<h1>Titele1 : "+title+"</h1>")
+var result = title.replace("good","bad")
+document.write("<h1>Replace First : "+result+ "</h1>")
+document.write("<h1>Orginal String : "+title+"</h1>")
+document.write("<hr>")
+
+result = title.replace(/good/g,"bad")
+document.write("<h1>Replace All : "+result+"</h1>")
+
+document.write("<hr>")
+var t = 0
+var result = title.replace(/good/g, match => ++t === 2 ? 'bad' : match)
+document.write("<h1>Replace Second : "+ result +"</h1>")
+document.write("<hr>")
+
+var result = title.toUpperCase()
+document.write("<h1> UpperCase : "+result+"<h1>")
+
+document.write("<hr>")
+   
+var greeting = "       Good Morning"
+document.write("<h1>length : "+greeting.length+"</h1>")
+ result = greeting.trimStart()
+document.write("<h1>length2 : "+result.length+"</h1>")
+document.write("<hr>")
+var greeting = "Good Morning       "
+document.write("<h1>Length1 : "+greeting.length +"</h1>")
+result = greeting.trimEnd()
+document.write("<h1>Result : "+result.length+"</h1>")
+
+document.write("<hr>")
+
+var greeting = "   good Morning     "
+document.write("<h1>Length : "+greeting.length+"</h1>")
+var result = greeting.trim()
+document.write("<h1>Length2 : "+result.length+"</h1>")
+
+var names = "Rahul Raj Priya Preeti Mohan"
+var arr=names.split("")
+console.log(arr)
+for(const name of arr){
+    document.write("<h1>"+name+"</h1>")
+}
+
+document.write("<hr>")
+
+var name = "Rahul sharma sharma sharma"
+var check = name.includes("sharma")
+console.log(check)
+
+var index = name.indexOf("sharma")
+// starting Index
+console.log(index)
+
+var lindex = name.lastIndexOf("sharma")
+console.log(lindex)
+
+var searchstr = name.search("l")
+console.log(searchstr)
+
+
+/* In a given long string - 
+The quick brown
+fox jumped over the lazy dog
+a. Calculate the number of vowels
+ (a,e,i,o,u) */
+
+ var str = "The quick brown fox jumped over the lazy dog"
+
+ var count = 0
+ for(const a of str){
+     var char = a
+  if( char == 'a' || char == "A" || char == "e" || char == "E" || char == "i" || char == "I" || char == "o" || char == "O" || char == "u" || char == "U"){
+    document.write("<h3>Vowels : "+char+"</h3>")
+       count++;
+  }
+ }
+ document.write("<h2>Number of Vowels : "+count+"</h2><hr>")
+
+//  b. Calculate the number of white spaces
+
+var space = 0
+for(const b of str){
+  if( b == " "){
+    space++;
+  }
+}
+document.write("White Space : "+space+"<hr>")
+
+
+// c. Generate a new string where 1st letter of each word is in caps. 
+  
+var result = str.replace(/\b\w/g, char => char.toUpperCase())
+document.write("<h1>Result : "+result+"</h1><hr>")
+
+// d.Calculate the length of the string 
+ 
+ var length = str.length
+ document.write("<h2>length of Str : "+length+"</h2>")
+</script>

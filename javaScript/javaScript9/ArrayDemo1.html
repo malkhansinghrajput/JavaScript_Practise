@@ -1,0 +1,40 @@
+<!-- 
+Array:It is a sequence which is used to store bulk of hetergenous(different types)data,where each data is given by numeral index value which is used to access data.
+Store Data at index 0 to n-1 where n is length of an array.
+------
+Note:Array is mutable.
+------
+Syntax:
+var arrname = [e1,e2.....en]
+-->
+
+<script>
+    var empdetails = ["Rahul Sharma",121,"React JS Developer",34567.34,"rahulsharma@gmail.com",true]
+    document.write("<h1>empdetails:"+empdetails+"</h1>")
+    document.write("<h1>Data Type:"+typeof(empdetails)+"</h1><hr>")
+    
+    //access single data
+    document.write("<h1>empdetails[2]:"+empdetails[2]+"</h1><hr>")
+    
+    //access all data
+    for(var a=0; a<empdetails.length; a++){
+        document.write("<h1>empdetails["+a+"]:"+empdetails[a]+"</h1>")
+    }
+    document.write("<hr>")
+
+    document.write("<h1>For in Loop:</h1>")
+    //forin loop:loop with data and index
+    for (var a in empdetails) 
+    {
+        document.write("<h1>empdetails["+a+"]:"+empdetails[a]+"</h1>")
+    }
+    document.write("<hr>")
+    document.write("<h1>For of Loop:</h1>")
+    //forof loop:loop with data and no index
+    for (var data of empdetails) 
+    {
+        document.write("<h1>"+data+"</h1>")
+    }
+
+
+</script>

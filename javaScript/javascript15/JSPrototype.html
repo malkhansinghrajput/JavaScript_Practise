@@ -1,0 +1,40 @@
+<!-- 
+In JavaScript, a prototype is a mechanism that allows object(Function,Array,JSObject,String) to inherit properties and methods from other objects. Each JavaScript object has an internal prototype property, which points to another object. This prototype chain allows properties and methods to be shared across objects.
+====
+How Prototypes Work:
+When we create a new object using new Person(), it inherits properties from the Person constructor function's prototype.
+The method greet is not directly inside the person1 object, but JavaScript will look in the prototype chain and find it in Person.prototype.
+=======
+Prototype Chain:
+person1 will first look for the method greet in its own properties.
+If it doesn't find it there, it will search in Person.prototype.
+If Person.prototype does not have the method, JavaScript will continue looking further up the prototype chain (e.g., .prototype).
+Object
+this:it is a reference to current object
+-->
+
+
+<script>
+    // Constructor function
+    function Person(name, age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    // Adding a method to the prototype of Person
+    Person.prototype.greet = function () {
+        console.log(`Hello, my name is ${this.name} and I am ${this.age} years old.`);
+    };
+
+    // Creating an instance of Person
+    let person1 = new Person('Alice', 30);
+    let person2 = new Person('Rahul', 30);
+    person1.__proto__.address="USA"
+    
+    // Calling the greet method
+    person1.greet();  // Output: Hello, my name is Alice and I am 30 years old.
+
+    console.log(person1)
+    console.log(person2)
+
+</script>

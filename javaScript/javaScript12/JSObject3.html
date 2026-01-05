@@ -1,0 +1,60 @@
+<!-- 
+JSObject Inside Array
+-->
+<script>
+    var s1 = {
+        name: "Neha Sharma",
+        rollno: 121,
+        course: "BCA",
+        fees: 34567.43,
+    }
+    var s2 = {
+        name: "Priya Sharma",
+        rollno: 231,
+        course: "MCA",
+        fees: 44567.43,
+    }
+    var s3 = {
+        name: "Mukesh Sharma",
+        rollno: 433,
+        course: "B.Tech",
+        fees: 54567.43,
+    }
+    var s4 = {
+        name: "Raj Sharma",
+        rollno: 431,
+        course: "M.Tech",
+        fees: 64567.43,
+    }
+
+    //append jsobject into array
+    var arrStud = []
+    arrStud.push(s1,s2,s3,s4)
+    console.log(arrStud)
+    document.write("<h1>********** Details *******</h1>")
+    var result = "<table align=center border=1 cellpadding=10 cellspacing=0 style='font-size:26'>"
+        result+="<tr><th>Rollno</th><th>Name</th><th>Course</th><th>Fees</th></tr>"
+    for (const obj of arrStud) {
+        result+="<tr align=center>"
+        result+="<td>"+obj.rollno+"</td>"
+        result+="<td>"+obj.name+"</td>"
+        result+="<td>"+obj.course+"</td>"
+        result+="<td>"+obj.fees+"</td>"    
+        result+="</tr>"    
+    }
+    result+="</table>"
+    document.write(result)
+</script>
+<!-- 1. Create a JSObject to storename_of_course (key) andduration_in_month(value).
+2. create a dictionary to store name of cricket teams according to their world
+rankings
+3. Create a dictionary to store name of states and 3 cities of each state.
+<ul><li>
+        Madhya Pradesh
+        <ul><li>
+                Ujjain</li><li>
+                    Indore</li></ul></li><li>
+        Uttar Pradesh
+        <ul><li>
+                Mirzapur</li><li>
+                    Kanpur</li></ul></li></ul>  -->

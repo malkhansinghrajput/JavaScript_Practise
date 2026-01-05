@@ -1,0 +1,40 @@
+<!-- 
+Type Conversion:It is a mechanism which is used to convert one type of data reference into another data reference.
+-->
+
+<script>
+    //string into int
+    var age="32" 
+    document.write("<h1>Value of age:"+age+"</h1>")
+    document.write("<h1>Data Type of age:"+typeof(age)+"</h1>")
+
+    age=parseInt(age)
+    document.write("<h1>Value of age:"+age+"</h1>")
+    document.write("<h1>Data Type of age:"+typeof(age)+"</h1><hr>")
+
+     //string into float
+    var salary="34567.343"
+    document.write("<h1>Value of salary:"+salary+"</h1>")
+    document.write("<h1>Data Type of salary:"+typeof(salary)+"</h1>")
+
+    salary=parseFloat(salary)
+    document.write("<h1>Value of salary:"+salary+"</h1>")
+    document.write("<h1>Data Type of salary:"+typeof(salary)+"</h1><hr>")
+
+    //Note: we can only convert numeric string into a number
+    var gender="Male"
+    document.write("<h1>Value of gender:"+gender+"</h1>")
+    document.write("<h1>Data Type of gender:"+typeof(gender)+"</h1>")
+
+    gender=parseInt(gender)
+    document.write("<h1>Value of gender:"+gender+"</h1>")
+    document.write("<h1>Data Type of gender:"+typeof(gender)+"</h1><hr>")
+
+    salary=salary.toString()
+    document.write("<h1>Value of salary:"+salary+"</h1>")
+    document.write("<h1>Data Type of salary:"+typeof(salary)+"</h1><hr>")
+
+    age=age.toString()
+    document.write("<h1>Value of age:"+age+"</h1>")
+    document.write("<h1>Data Type of age:"+typeof(age)+"</h1><hr>")
+</script>

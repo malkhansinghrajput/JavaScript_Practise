@@ -1,0 +1,66 @@
+<!-- 
+for Loop
+1. Intialization
+2. Condition 
+3. Code Execute 
+4. Incriment And Decriment
+
+-->
+<script>
+    // print five tme Hello World
+     for(let i = 1; i <= 5; i++){
+        document.write("<h3>Hello World</h3>")
+     }
+     document.write("<hr>")
+     for(let i=1; i<=5;){
+        document.write("<h3>Hello Malkhan singh</h3>")
+        i++;
+     }
+      document.write("<hr>")
+      var a = 1
+      for(;a <= 5;){
+        document.write("<h3>hello Bhai!!</h3>")
+        a++;
+      }
+       document.write("<hr>")
+
+    //    var b = 1
+    //    for(;;){
+    //     document.write("<h4>Hello world "+b+"</h4>")
+    //     b++;
+    //    }
+
+   // for(let i = 1; i<=8; i++);
+    // document.write("<h1>Hello Baba !! "+i+"</h1>")
+
+     for(let a = 1; a <= 5; a++)
+     document.write("<h5>Hello Boss ILU!!"+a+"</h5>")
+     document.write("<h5>Hello Ankit Gandu!! "+a+"</h5>")
+
+     document.write("<hr>")
+
+     for(let x = 1, y = 5; x<=5, y>=1; x++, y--)
+     document.write("<h1>X : "+x+ "And Y : "+y+"</h1>")
+
+     document.write("<hr>")
+
+    //  write a programe that accept take number from user and check given number is palindrome number or not
+
+    var num = parseInt(prompt("Enter a Number"))
+    var temp = num
+    var rev = 0
+    var rem = 0
+
+    for(;(num !== 0);){
+        rem = num % 10
+        rev = rev * 10 + rem
+        num = parseInt( num / 10)
+    }
+    document.write("<h4>Reverse : "+rev+ " temp : "+temp+"<h4>")
+if (rev == temp){
+    document.write("<h5>"+rev+" : is Palindrome Number</h5>")
+}else {
+    document.write("<h5>"+temp+" : is Not Palindrome Number</h5>")
+}
+
+</script>

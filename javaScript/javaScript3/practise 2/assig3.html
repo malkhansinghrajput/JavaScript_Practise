@@ -1,0 +1,52 @@
+ <!-- Write a program accepts an amount in rupees (Hint Rs 4567) and find out how many currency of -->
+<!-- Rs 2000,500,200,100,50,20,10,5,2,1. -->
+
+<script>
+       var amt = parseInt(prompt("Enter a amount"))
+       var note2000 = 0
+       var note2000= parseInt(amt/2000) //2
+       document.write("<h1>Note of 2000 is : "+note2000+" </h1>")
+       amt= amt%2000 //567
+
+        var note500 =parseInt(amt/500) //1
+       document.write("<h1>Note of 500 is : "+note500+" </h1>")
+       amt= amt%500 //67
+
+       var note200 =parseInt(amt/200) //1
+       document.write("<h1>Note of 200 is : "+note200+" </h1>")
+       amt= amt%200 //17
+
+       var note100=parseInt(amt/100) //1
+       document.write("<h1>Note of 100 is : "+note100+" </h1>")
+       amt= amt%100 //17
+
+       var note50 =parseInt(amt/50) //1
+       document.write("<h1>Note of 50 is : "+note50+" </h1>")
+       amt= amt%50 //17
+
+       var note20 =parseInt(amt/20) //1
+       document.write("<h1>Note of 20 is : "+note50+" </h1>")
+       amt= amt%20 //17
+
+       var note10 =parseInt(amt/10) //1
+       document.write("<h1>Note of 10 is : "+note10+" </h1>")
+       amt= amt%10 //7
+
+       var note5 =parseInt(amt/5) //1
+       document.write("<h1>Note of 5 is : "+note5+" </h1>")
+       amt= amt%5 //2
+
+       var note2 =parseInt(amt/2) //1
+       document.write("<h1>Note of 2is : "+note2+" </h1>")
+       amt= amt%2 //0
+
+       var note2 =parseInt(amt/2) //1
+       document.write("<h1>Note of 2 is : "+note2+" </h1>")
+       amt= amt%50 //17
+
+       var note1 =parseInt(amt/1) //1
+       document.write("<h1>Note of 1 is : "+note1+" </h1>")
+       amt= amt%50 //17
+
+
+</script>

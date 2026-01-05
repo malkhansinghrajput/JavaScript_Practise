@@ -1,0 +1,125 @@
+<h1 id="all"></h1><hr>
+<h1 id="push"></h1><hr>
+<h1 id="pop"></h1><hr>
+<h1 id="shift"></h1><hr>
+<h1 id="unshift"></h1><hr>
+<h1 id="splice"></h1><hr>
+<h1 id="repeat"></h1><hr>
+<h1 id="remove"></h1><hr>
+
+
+<script>
+var cricketteam=["Kapil dev", "Sachin Tendulkar","M.s Dhoni","Virat Kohli"]
+var result = "<ol>"
+for(const index in cricketteam){
+       result+="<li>"+cricketteam[index]+"</li>"
+}
+result+="</ol>"
+console.log(result)
+document.getElementById('all').innerHTML=result
+
+// add new player at last index
+cricketteam.push("Rhohit Sharma", "K.L Rahul")
+result = "<ol>"
+for(const index in cricketteam){
+       result+="<li>"+cricketteam[index]+"</li>"
+       console.log(cricketteam[index])
+}
+result+="</ol>"
+
+document.getElementById('push').innerHTML=result
+
+// remove player from last index
+
+var rplayer = cricketteam.pop()
+console.log(rplayer);
+rplayer=cricketteam.pop()
+console.log(rplayer);
+result="<ol>"
+for(const index in cricketteam){
+    result+="<li>"+cricketteam[index]+"</li>"
+}
+result+="</ol>"
+document.getElementById('pop').innerHTML=result
+
+// remove player from first   index
+ 
+var fplayer= cricketteam.shift()
+ console.log(fplayer)
+ result="<ol>"
+ for(const index in cricketteam){
+       result+="<li>"+cricketteam[index] +"</li>"
+ }
+ result+= "</ol>"
+ document.getElementById('shift').innerHTML=result
+
+// add palyer from first index
+cricketteam.unshift("Kapil dev")
+console.log(cricketteam);
+result="<ol>"
+for(const index in cricketteam){
+       result+="<li>"+cricketteam[index] +"</li>"
+
+}
+result+="</ol>"
+document.getElementById('unshift').innerHTML=result
+
+// add or remove at any index
+// splice.
+// first arg: index
+// second arg: count of element to be removed
+// third arg(optional): add element
+cricketteam.splice(1,1,"Virendra shewag", "rahul dravid", "Hardik Pandya")
+console.log(cricketteam)
+result = "<ol>"
+       for(const index in cricketteam)
+{
+       result+="<li>"+cricketteam[index] +"</li>"
+}
+result+="</ol>"
+document.getElementById('splice').innerHTML=result
+
+// add
+cricketteam.push("Rahul Dravid")
+
+result = "<ol>"
+for( const index in cricketteam){
+       result+="<li>"+cricketteam[index]+"</li>"
+}
+result+="</ol>"
+document.getElementById('repeat').innerHTML=result
+
+// remove
+var index = cricketteam.indexOf("Rahul Dravid")
+console.log(index)
+cricketteam.splice(index,1)
+
+result = "<ol>"
+       for (const index in cricketteam){
+              result+="<li>"+cricketteam[index]+"</li>"
+       }
+result+="</ol>"
+
+document.getElementById('remove').innerHTML=result
+
+// without using for loop how we can find if element is exist or not
+
+var check = cricketteam.includes("Rahul Dravid")
+console.log(check)
+
+// reverse
+var array= [10,20,30,40,50,]
+console.log(array)
+var newArray=array.reverse()
+console.log(newArray)
+console.log(array);
+
+// sort
+var studmarks = [30,40,10,50,30,90,75,95]
+console.log(studmarks);
+ var newarray = studmarks.sort().reverse()
+ console.log(newarray);
+ console.log(studmarks);
+</script>
+
+

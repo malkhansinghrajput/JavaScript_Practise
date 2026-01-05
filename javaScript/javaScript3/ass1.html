@@ -1,0 +1,24 @@
+<!-- 
+Q.8 Write a program to calculate sum of digits number.(Hint:123 is a given number then o/p=6)
+-->
+
+<script>
+    var num=123
+    var rem=0
+    var sum=0
+    rem=num%10 //3
+    sum=sum+rem //3
+    num=parseInt(num/10) //12
+
+    rem=num%10 //2
+    sum=sum+rem //3+2=5
+    num=parseInt(num/10) //1
+
+    rem=num%10 //1
+    sum=sum+rem //5+1=6
+    num=parseInt(num/10) //0
+
+    document.write("<h1>Sum is:"+sum+"</h1>")
+
+
+</script>

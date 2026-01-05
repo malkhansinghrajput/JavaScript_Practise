@@ -1,0 +1,15 @@
+<!-- Write a program accepts 4 digits no. and display the no. in reverse order. -->
+
+<script>
+       var num = parseInt(prompt("Enter a number"));
+       var rem = 0;
+       var rev = 0;
+
+       for(let i=1; num>0; i++)
+{
+     rem= num%10;
+     rev= rev*10+ rem;
+     num=parseInt(num/10)
+}
+document.write("<h1>Reverse is:"+rev+"</h1>")
+</script>

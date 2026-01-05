@@ -1,0 +1,26 @@
+<!-- 
+this: it is a reference to current class object 
+-->
+
+<script>
+    var mobile = function(model_no) {
+        this.model_no=model_no;
+        this.price=5000;
+    }
+
+    var vivo = new mobile("Vivo")
+    var oppo = new mobile("Oppo")
+    vivo.__proto__.color='white'
+document.write("<h1>"+vivo.color+"</h1>")
+document.write("<h1>"+oppo.color+"</h1>")
+console.log(vivo)
+console.log(oppo)
+var arrkey= Object.keys(vivo)
+console.log(arrkey)
+
+for(const key in vivo){
+    document.write("<h1>"+key+"</h1>")
+    console.log(`Key is ${key}`)
+}
+
+</script>

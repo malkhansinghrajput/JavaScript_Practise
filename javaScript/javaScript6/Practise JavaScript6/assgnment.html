@@ -1,0 +1,273 @@
+<!-- 
+Q.1 Write a program to print n natural number. 
+-->
+
+<!-- <script>
+    var num = parseInt(prompt("Enter a end point of natural Number that you have print"))
+    var i = 1
+    do {
+        document.write(i+"  ")
+        i++;
+    }while(i<=num)
+</script> -->
+
+<!-- 
+Q.2 Write a program to calculate factorial of given number.
+-->
+
+<!-- <script>
+    var num = parseInt(prompt("Enter a Number to calculate Factorial ."))
+    var fact = 1
+    var  i = 1
+    do {
+        fact *= i;
+        i++;
+    }while(i<=num)
+    document.write(`<h1>Factorial of ${num} is : ${fact}</h1>`)
+</script> -->
+
+
+<!-- 
+Q.3 Write a program to calculate square from 1-10 numbers.
+-->
+
+<!-- <script>
+    var i = 1 
+    do{
+        document.write(i*i + " ")
+        i++;
+    }while(i<=10)
+</script> -->
+
+<!--  
+Q.4 Write a program to print table of any given numbers.
+-->
+
+<!-- <script>
+    var num = parseInt(prompt("Enter table number"))
+    var i = 1
+    do{
+        document.write(`<h2>${num} * ${i} = ${num*i} </h2>`)
+        i++;
+    }while(i<=10)
+</script> -->
+
+<!-- 
+Q.5 Write a program to find out reverse of a given number.
+-->
+
+<!-- <script>
+    var num = parseInt(prompt("Enter two or more Digit number to print its reverse"))
+    var sum = 0
+    var rem = 0 
+    do{
+         rem = num%10 //1 ,2,1
+         sum =(sum * 10) + rem  //1 ,10+2=12, 120+1=121
+         num = parseInt(num/10) //12,1, 0
+    }while(0<num)
+    document.write(`<h1>Reverse : ${sum}</h1>`)
+</script> -->
+
+<!-- 
+Q.6 Write a program that accepts a number from user and check given number is palindrome number
+or not.
+-->
+
+<!-- <script>
+    var num = parseInt(prompt("Enter a Number to check its plindrome number or not"))
+    var rem = 0
+    var sum = 0
+    var b = num
+    do {
+        rem = num % 10
+        sum = (sum * 10) + rem
+        num = parseInt(num/10)
+    }while(0<num)
+    if(b==sum){
+        document.write(`<h1>${sum} is palindrome number !!</h1>`)
+    } else{
+         document.write(`<h1>${sum} is Not palindrome number !!</h1>`)
+    }
+</script> -->
+
+<!-- 
+Q.7 Write a program that accepts a number from user and check given number is Armstrong number or
+not.
+-->
+<!-- <script>
+    var num = parseInt(prompt("Enter a Number"))
+    var count = 0;
+    var sum = 0
+    var temp = num
+    var temp2 = temp
+
+    do{
+        num = parseInt(num/10)
+        count++
+    }while(num > 0)
+    do{
+        var rem = temp % 10
+        var m = 1, f = 1
+        do{
+            m = rem * m
+            f++;
+        }while(count>=f)
+        var sum = sum + m
+        temp = parseInt(temp/10)
+    }while(temp > 0)
+
+    (sum==temp2)?document.write(`<h2>${sum} is ArmStrong Number</h2>`):document.write(`<h2>${temp2} is Not ArmStrong Number</h2>`)
+
+</script> -->
+
+<!-- 
+Q.8 Write a program that accepts a number from user calculate factor of a given number.
+-->
+
+<!-- <script>
+    var num = parseInt(prompt("Enter a Number to find its Factor"))
+    var a = 1
+     document.write(`<h1>Factor of ${num} is : </h1>`)
+    do{
+         if (num%a==0){
+            document.write(`<h1> ${a}</h1>`)
+         }
+         a++;
+    }while(a<=num)
+
+    document.write("<hr>")
+</script> -->
+
+<!-- 
+Q.9 Write a program that accepts a number from user check given number is perfect number or not.
+-->
+
+<!-- <script>
+    var num = parseInt(prompt("Enter a number"))
+    var copy = num
+    var i = 1
+    var sum = 0
+    do {
+          if(num%i==0){
+            sum += i
+            document.write("<h1>Fact : ",i, " Sum : ",sum,"</h1>")
+          }
+          i++;
+    }while(i<num)
+  (copy==sum)?document.write(`${sum} is Perfect number`):document.write(`${sum} is Not Perfect number`)
+</script> -->
+
+<!-- 
+Q.10 Write a program to print Fibonacci Series.
+-->
+
+<!-- <script>
+    var num = parseInt(prompt("Enter A Number"))
+    var first = 0 , second = 1, next = 0, i=1;
+    do {
+     document.write(first+" ")
+        next = first + second // 1,2,3,5,8
+        first = second // 1, 1,2,,3,5
+        second = next // 1,2,3,5,
+        i++;
+    }while(i<=num)
+    document.write("i : ",i)
+</script> -->
+
+<!-- 
+Q.11 Write a program to calculate sum of digits of a number.
+-->
+
+<!-- <script>
+    var num = parseInt(prompt("Enter a number "))
+    var rem = 0, sum = 0, copy=num
+    do{
+        rem= num%10
+        sum = sum + rem 
+        num = parseInt(num/10)
+    }while(num > 0)
+    document.write(`Sum of ${copy} is : ${sum}`)
+</script> -->
+
+<!-- 
+Q.12 Write a program to calculate sum of squares of n natural number.
+-->
+
+<!-- <script> 
+    var num = parseInt(prompt("Enter A Number"))
+    var sum = 0, i = 1;
+    do{
+        document.write(`<h4>Square is : ${i*i}</h4>`)
+           sum += i*i
+           i++;
+    }while(i<=num)
+    document.write(`<h1>Sum of Total Sqare : ${sum}</h1>`)
+</script> -->
+
+<!-- 
+Q.13 Write a program to accept n number from user and show how many number are even or odd.
+-->
+
+<!-- <script>
+    var num = parseInt(prompt("Enter a Number"))
+    var i = 1, count=0, count2=0;
+    do{
+        if(i%2==0){
+            document.write(" " +i)
+            count++
+
+        }else {
+             document.write(" " +i)
+             count2++;
+        }
+        i++;
+    }while(i<=num)
+     document.write(`<h2>Even Number Count is: ${count} Odd Number Count is : ${count2}</h2>`)
+</script> -->
+
+<!-- 
+Q.14 Write a program to find LCM of two numbers.
+-->
+<!-- <script>
+    var n = parseInt(prompt("Enter a First number !!"))
+    var m = parseInt(prompt("Enter Second number !!"))
+
+    if( n % m == 0){
+        document.write("LCM of "+n+ " And " +m+ " is :" +n)
+    }  else if( m % n == 0){
+        document.write("LCM of "+n+ " And" +m+ " is :" +m)
+    }else {
+         document.write("LCM of "+n+ " And " +m+ " is :" +m*n)
+    }
+</script> -->
+
+<!-- Q.15 Write a program to find HCF of two numbers.-->
+
+<!-- <script>
+    var n = parseInt(prompt("Enter First Number"))
+    var m = parseInt(prompt("Enter Second number"))
+
+if(n % m == 0){
+  document.write(`<h3> HCF of ${n} and ${m} is : ${m} </h3>`)
+} else if( m % n == 0) {
+    document.write(`<h3> HCF of ${n} and ${m} is : ${n} </h3>`)
+}else {
+    document.write(`<h3>HCF of ${n} and ${m} is : ${1} </h3>`)
+}
+</script> -->
+
+<!-- 
+Q.16 Write a program that accepts a number from user and check given number is prime number or not.
+-->
+<script>
+    var n = parseInt(prompt("Enter a number "))
+    var i = 2
+  do{
+    if( n % i == 0){
+        break;
+    }
+    i++
+  }while(i<parseInt(n/2))
+
+  (i>parseInt(n/2))?document.write(`${n} is Prime Number`):(document.write(`${n} is Not Prime Number`))
+</script>

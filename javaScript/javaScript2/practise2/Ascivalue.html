@@ -1,0 +1,24 @@
+<!-- 
+ ASCII -: American Standard Code For Interchange Infornmation 
+ A: 65,
+ a:97
+-->
+
+<script> 
+       var str1 = "A"
+        var chaVal = str1.charCodeAt(0)
+        document.write(`<h1>Char Code Of A : ${chaVal}</h1>`);
+         
+        var name = "MalkhanSingh"
+         for (let i=0; i<name.length; i++){
+              var asscival = name.charCodeAt(i)
+              document.write(`<h2>Char Code Of [${name[i]}] is : ${asscival} </h2>`)
+         }
+
+        let code = String.fromCharCode(65)
+         document.write(`<h3>Ascii code of 97 is : ${code}<h3>`)
+
+        let namee = String.fromCharCode(77,97,108,107,104,97,110)
+         document.write(`<h1>Code to String : ${namee} </h1>`)
+
+</script>

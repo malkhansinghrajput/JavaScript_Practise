@@ -1,0 +1,23 @@
+<!-- 
+
+
+function 
+String    ====> Prototype Object  ===> Object array
+Object
+-->
+
+<script>
+    Object.prototype.msg = "Good Morning"
+
+
+    var str = "hii"
+    console.log(str.msg)
+    var arr = [1]
+    console.log(arr.msg)
+    var jsobj = {}
+    console.log(jsobj.msg)
+    var f1 = function() {
+        console.log("hey")
+    }
+    console.log(f1.msg)
+</script>

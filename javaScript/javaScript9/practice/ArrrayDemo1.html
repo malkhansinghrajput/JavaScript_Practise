@@ -1,0 +1,28 @@
+<!-- 
+Array:- It is sequence wich is used to stored bulk amount of hetrogenius data. it is gieven a numeric index that can we access the single data . it is Mutable
+it is stored data fro 0 index to n-1 n is an length. 
+-->
+
+<script>
+  var empdetail = ["Malkhan singh dewda", 251 , "Full-stack developer" , 45000.22 , "malkhansingh@gmail.com" ,true]
+  document.write("<h2>EmpDetails : "+empdetail+" </h2>")
+  document.write("<h2>EmpDetails : " +typeof(empdetail)+ " </h2>")
+// single data
+  document.write("<h3>Single data : "+empdetail[4]+"</h3>")
+//  multiple data
+for(let a = 0; a<empdetail.length; a++){
+  document.write("<h3>empdatail["+a+"] =" +empdetail[a]+ "</h3>")
+}
+document.write("<hr>")
+
+document.write("<h2>For In Loop</h2>")
+for(var a in empdetail){
+  document.write("<h4>empdetail["+a+"] = "+empdetail[a]+"</h4>")
+}
+ document.write("<hr>")
+ document.write("<h1>For Of Loop</h1>")
+
+ for(var data of empdetail){
+  document.write("<h3>Data : "+data+"</h3>")
+ }
+</script>

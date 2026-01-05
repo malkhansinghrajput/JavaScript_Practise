@@ -1,0 +1,19 @@
+<!-- 
+let:It does have block scope.
+-->
+
+<script>
+    let x=100 
+    {
+        let x=200
+        document.write("<h1>Value of x inside block:"+x+"</h1>")
+    }
+    document.write("<h1>Value of x outside block:"+x+"</h1><hr>")
+
+    let a=100
+    for(let a=1; a<=5; a++)
+    {
+        document.write("<h1>Value of a inside block:"+a+"</h1>")
+    }
+    document.write("<h1>Value of a outside block:"+a+"</h1>")
+</script>

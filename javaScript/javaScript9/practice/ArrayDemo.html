@@ -1,0 +1,37 @@
+<!-- 
+Array :- It is sequence whch is used to store bulk of hetrogenius data(different type) data. where each data is given by numerial index value which is used to access data.
+Store Data at Index 0 to n-1 where n is length of an array.
+-------
+Array:- it is mutable.
+------
+syntax:-
+arrayname = [e1,e2,e3,e4.......en]
+-->
+
+<script>
+    var studmarks = [20,30,59,24,75]
+    document.write("<h1>Array : "+studmarks+"</h1>")
+    document.write("<h1>Array : "+typeof(studmarks)+"</h1>")
+    //single data
+    document.write("<h2>Single Data : "+studmarks[2]+"</h2>")
+    // all data access
+    for(let index=0; index<studmarks.length;index++){
+        document.write("<h3>Array studmarks["+index+"]:"+studmarks[index]+"</h3>")
+    }
+    document.write("<hr>")
+
+    document.write("<h1>For In Loop</h1>")
+
+    //for in Loop:- Loop with data and Index
+    for(var a in studmarks){
+        document.write("<h3>Array studmarks["+a+"]:"+studmarks[a]+"</h3>")
+    }
+
+   document.write("<h1>For OF Loop</h1>")
+// For OF Lopp :- Loop with data no index
+
+   for(let data of studmarks){
+    document.write("<h3>Data : "+data+"</h3>")
+   }
+
+</script>

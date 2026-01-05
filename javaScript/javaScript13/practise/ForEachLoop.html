@@ -1,0 +1,22 @@
+<!-- 
+foreach loop :- The forEach() array method loops through any array , executing a provided function once for each array element in ascending index order. the function is referred to as a callback function.  
+-->
+
+<script>
+    var studmarks = [45,54,78,89,34,67]
+    studmarks.forEach((value,index)=>document.write("<h2>value : "+value+" Index : "+index+"</h2>"))
+
+    studmarks.forEach(function(value,index,array){
+           document.write("<h1>Value : "+value+ " Index : "+index+" Array : "+array+"</h1>")
+    })
+
+    document.write("<hr>")
+
+    var empdetails = ["Malkhan Singh Dewda","malkhansingh@gmail.com",232,243443]
+
+     empdetails.forEach((value,index) =>document.write("<h2>Value : "+value+" & Index : "+index+"</h2>"))
+
+     empdetails.forEach(function(value,index){
+         document.write("<h1>Value : "+value+" & Index : "+index+"</h1>")
+     })
+</script>

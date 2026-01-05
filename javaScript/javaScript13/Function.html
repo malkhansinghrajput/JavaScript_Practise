@@ -1,0 +1,50 @@
+ <!-- 
+Function:It is a block of statement or code which perform a particular task.
+Syntax:
+function func_name(arg) {
+    ...statement
+    return data
+}
+========================
+On the basis of arguments and return type function are classified into 4 Types:
+1.Type
+function without return type and without arguments
+2.Type
+function without return type and with arguments
+3.Type
+function with return type and without arguments
+4.Type
+function with return type and with arguments
+=====
+-->
+<script>
+    //Type1
+    function greeting(){
+        document.write("<h1>Good Morning!!</h1>")
+    }
+    greeting()
+
+    //Type2
+    function add(a,b){
+        var c=a+b 
+        document.write("<h1>Addition is:"+c+"</h1>")
+    }
+    add(23,12)
+
+    //Type3
+    function multiply(){
+        var c=a*b
+        return c
+    }
+    var a=12
+    var b=12
+    var result = multiply()
+    document.write("<h1>Multiplication is:"+result+"</h1>")
+
+    //Type4
+    function cube(a){
+        return a*a*a
+    }
+    document.write("<h1>Cube is:"+cube(5)+"</h1>")
+
+</script>

@@ -1,0 +1,63 @@
+<!-- 
+JS Object in javaScript :- it is sequence which is used to store bulk amount hetrogenous data in the form of key value pair .
+
+No Index . 
+order : random 
+it is mutable.
+----------------------
+Syntax :
+var objectname : {
+key name : value
+key name : value
+......
+key name : value
+}
+key :  
+1.it is immutable
+2. it can be any data like string,number ,bool, Array.
+value : 
+1.it is mutable.
+
+-->
+
+<script>
+    var person  = {
+        name : "Malkhan singh dewda",
+        age : 24,
+        address : "indore, Vijay Nagar"
+    }
+    document.write("<h1> Persion : "+person+"</h1>")
+     document.write("<h1>Type of person : "+typeof(person) +"</h1>")
+     document.write("<hr>")
+    //  acess single record
+     document.write("<h2>Name : "+person["name"] +"</h2>")
+     document.write("<h2>Age : "+person["age"]+"</h2>")
+     document.write("<h2>Address : "+person["address"] +"<h2><hr>")
+
+    //  access all key 
+     
+     document.write("<h1>********Key*********</h1>")
+     var arrkey = Object.keys(person)
+     for(const key of arrkey){
+        document.write("<h1>"+key+"</h1>")
+     }
+     document.write("<hr>")
+
+    //  access all values 
+      document.write("<h1>********Values*********</h1>")
+    var arrValues = Object.values(person)
+    for(const value of arrValues){
+        document.write("<h1> Values : "+value +"</h1>")
+    }
+    // acces key & values
+    document.write("<hr>")
+    for(const key in person){
+        document.write("<h1>Key : "+key+" &      Values : "+person[key]+"</h1>")
+    }
+    document.write("<hr>")
+
+    // Note :- we can not use for of loop in js object
+    for(var a = 0; a<Object.values(person).length; a++){
+    document.write("<h1> Key : "+Object.keys(person)[a] +" Values : "+Object.values(person)[a]+"</h1>")
+    }
+</script>

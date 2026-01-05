@@ -1,0 +1,16 @@
+
+<script>
+    var studmarks = [94,88,78,98,43,77,69]
+    var max = studmarks[0]
+    var min = studmarks[0]
+
+    for(const a in studmarks){
+        if(max<studmarks[a]){
+            max = studmarks[a]
+        }
+        if(min>studmarks[a]){
+            min = studmarks[a]
+        }
+    }
+    document.write(`<h1>Studmaks = ${studmarks} and Its max is : ${max} and its min is : ${min}</h1>`)
+</script>

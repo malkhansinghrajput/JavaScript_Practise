@@ -1,0 +1,54 @@
+<!-- 
+Incriment(++):-
+Pre: first incriment  then asign ++a
+post: first assign then incriment a++
+Decriment(--) :-
+Pre: First Decriment then assign --a
+Post: First Decriment then Assign a--
+
+-->
+
+<script>
+       var a =32
+       var b = 0
+         b= ++a;
+         document.write("<h1>Value of ++a : "+a+" </h1>")
+         document.write("<h1>Value of ++a : "+b+" </h1>")
+
+         var a = 32
+             b = 0
+             b = a++
+             document.write("<h1>value of a : "+a+"</h1>")
+             document.write("<h1>value of b : "+b+"</h1>")
+       var a = 32
+           b = 0
+           b = --a
+           document.write("<h1>Value of a : "+a+"</h1>")
+           document.write("<h1>value of b : "+b+"</h1>")
+
+       var a = 32
+           b = 0
+           b = a--
+           document.write("<h1>Value of a : "+a+"</h1>")
+           document.write("<h1>value of b : "+b+"</h1>")
+
+       var a =12
+           b = 0 
+           b= ++a - a++ // b= 13 - 13 =0 a=14
+           document.write("<h1>Bvalue of a : "+a+"</h1>")
+           document.write("<h1>Value of b : "+b+"</h1>")
+
+       var a =45
+           b = 0 
+           b= a-- - a++ // b= 45 - 44 =1 a=45
+           document.write("<h1>Bvalue of a : "+a+"</h1>")
+           document.write("<h1>Value of b : "+b+"</h1>")
+           
+       var a =33
+           b = 0 
+           b= --a - a-- // b= 32 - 32 =0 a=31
+           document.write("<h1>Bvalue of a : "+a+"</h1>")
+           document.write("<h1>Value of b : "+b+"</h1>")    
+
+
+</script>
