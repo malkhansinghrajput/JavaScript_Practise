@@ -1,0 +1,42 @@
+<!-- 
+AJAX: 
+Asynchronous Javascript and XML (Extensible MarkUp Language)
+It is not a programming language.
+Life Cycle Of AJAX:
+1. An event occurs in a web page(page is loaded, when a button is clicked)
+2. An XMLHttpRequest object is created by Javascript.
+3. An XMLHttpRequest object sends a request to a web server.
+4. Server process the request
+5. Server sends a response back to the web page.
+6. Response is read by Javascript
+-->
+
+<button onclick="addProduct()">Add Product</button>
+<script>
+    function addProduct() {
+        var xhttp = new XMLHttpRequest()
+        var params = {
+        "product_name": "TShirt",
+        "product_brand": "Nike",
+        "product_price": 1299.00,
+        "product_size": "X,XL,XXL,XXXL"
+    }
+        //open(method,url,async)
+        //method: Request Type:- GET, POST etc
+        //url:server location
+        //async:true(async) or false(sync)
+        xhttp.open("POST", "https://jsonplaceholder.typicode.com/posts", true)
+        xhttp.send(JSON.stringify(params))
+
+        xhttp.onreadystatechange = function () {
+            console.log("Hello:", this.readyState)
+            if (this.readyState == 4 && this.status == 200) {
+                console.log(this.responseText)
+                let jsonObj = JSON.parse(this.responseText)
+                console.log(jsonObj)
+            } else {
+                console.log(this.status)
+            }
+        }
+    }
+</script>

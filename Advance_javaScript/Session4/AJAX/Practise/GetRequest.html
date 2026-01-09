@@ -1,0 +1,93 @@
+<!-- 
+AJAX: 
+Asynchronous Javascript and Xml (Extensible MarkUp Language )
+It is not a programing language.
+Life Cycle Of AJSX :
+1. An event occure in a web page (page is loaded, when a button is clicked)
+2. An XMLHttpRequest Object is Created by Javascript .
+3.An XMLHttpRequest Object Send a request to a web server.
+4.Server process the request 
+5.Server sends a response back to the web page. 
+6.Response is ready by javaScript
+
+-->
+
+<button onclick="getUser()">
+    Download User
+</button>
+<script>
+    function getUser(){
+    var xhttp = new XMLHttpRequest()
+     //open(method,url,async)
+     //method: RequestType:- GET, POST etc
+     //url:server location
+     //async:true(async) or false(sync)
+     xhttp.open("GET", "https://jsonplaceholder.typicode.com/users",true)
+     xhttp.send()
+
+
+      /*
+        Xmlhttp Onreadystatechange function ()
+        The onreadystatechange property defines a function to be executed when the readyState changes. The status property and the statusText property holds the status of the XMLHttpRequest object. Holds the status of the XMLHttpRequest. The onreadystatechange function is called every time the readyState changes.
+        */
+        /*
+         
+        readyState	:Holds the status of the XMLHttpRequest.
+        0: request not initialized
+        1: server connection established
+        2: request received
+        3: processing request
+        4: request finished and response is ready
+
+        status:	
+        200: "OK"
+        403: "Forbidden":The HTTP status code 403 Forbidden means that the server understands the request but doesn't allow access.
+        404: "Page not found"
+
+        var stringjson = JSON.stringify(jsobject)
+        var jsonObject = JSON.parse(jsonString)
+        */
+
+        xhttp.onreadystatechange = function () {
+            console.log("readyState:",this.readyState)
+            if (this.readyState == 4 && this.status == 200) {
+                console.log(this.responseText)
+                let json =JSON.parse(this.responseText)
+                console.log(json)
+                setData(this.responseText)
+            }else {
+                console.log(this.status)
+            }
+        }
+    }
+
+
+    function setData(strdata) {
+        var users = JSON.parse(strdata)
+         var result = "<table border='1' align='center' cellpadding='10' cellspacing='0'>"
+        result += "<tr><th rowspan='3'>Name</th><th rowspan='3'>Username</th><th rowspan='3'>Email</th><th colspan='6'>Address</th><th rowspan='3'>Phone</th><th rowspan='3'>Website</th><th colspan='3'>Company</th></tr>"
+        result += "<tr><th rowspan='2'>street</th><th rowspan='2'>suite</th><th rowspan='2'>city</th><th rowspan='2'>zipcode</th><th colspan='2'>geo</th><th rowspan='2'>name</th><th rowspan='2'>catchphrase</th><th rowspan='2'>Bs</th></tr>"
+        result += "<tr><th>lat</th><th>long</th></tr>"
+        for (const obj of users) {
+            result += "<tr>"
+            result += "<th>" + obj["name"] + "</th>"
+            result += "<th>" + obj["username"] + "</th>"
+            result += "<th>" + obj["email"] + "</th>"
+            result += "<th>" + obj["address"]["street"] + "</th>"
+            result += "<th>" + obj["address"]["suite"] + "</th>"
+            result += "<th>" + obj["address"]["city"] + "</th>"
+            result += "<th>" + obj["address"]["zipcode"] + "</th>"
+            result += "<th>" + obj["address"]["geo"]["lat"] + "</th>"
+            result += "<th>" + obj["address"]["geo"]["lng"] + "</th>"
+            result += "<th>" + obj["phone"] + "</th>"
+            result += "<th>" + obj["website"] + "</th>"
+            result += "<th>" + obj["company"]["name"] + "</th>"
+            result += "<th>" + obj["company"]["catchPhrase"] + "</th>"
+            result += "<th>" + obj["company"]["bs"] + "</th>"
+            result += "</tr>"
+        }
+        document.write(result)
+
+    }
+
+</script>

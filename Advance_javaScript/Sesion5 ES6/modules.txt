@@ -1,0 +1,59 @@
+ES6 stands for ECMAScript 6. 
+ECMAScript was created to standardize JavaScript, and ES6 is the 6th version of ECMAScript, it was published in 2015, and is also known as ECMAScript 2015.
+ES6 introduces modern syntax, conveniences, and improvements to make JavaScript code more expressive, readable, and maintainable
+============
+A module is a piece of code that can be built upon.
+A library is a collection of pre-written code.
+A framework is a set of principles for developing applications.
+==================
+Package:A JavaScript package is a collection of files and directories that includes a package.json file. The package.json file contains information about the package, such as its name, version, dependencies, and scripts. 
+========================
+Module: This are collections of data reference,functions,function constructor,which can be linked in application.
+A module is a chunk of code in an external file that performs a specific task or function. 
+It is a separate entity within a program, allowing for modularity and code reusability. By encapsulating related code into modules, developers can organize their programs more efficiently and make them easier to maintain.
+====================================================
+Types of Modules:-
+
+1.) Builtin Modules: Those modules which are predefined and available by default in Node Application by its environment.
+
+eg: fs, http, url, path etc.
+const fs = require("fs") //ES5 Syntax
+----------------------------------------------------
+import fs from 'fs' //ES6 Syntax
+----------
+Level 1 Dependency: Application level non installable dependency. 
+Those modules which are available in node environment, which can be linked at application level, but not installed
+eg:fs, http, url, path
+require("module_name") //ES5
+------------------------------------------------------
+Level 2 Dependency: Application level installable dependency.
+
+Those modules which are not available in node environment, which can be linked at application level, installed explicitly
+eg: express,cors,multer etc 
+command: npm install <package_name>
+
+import express from 'express' //ES6 Syntax
+-----------------------------------------------------------
+Level 3 Dependency: Global Dependency
+
+Those modules which are installed globally at node environment level, which can not be linked at application level.
+eg: nodemon, typescript, @angular/cli, create-react-app
+command: npm install -g <package_name>
+eg:npm install -g nodemon 
+-------------------------------------------
+2.) Custom or user defined modules: Those modules which are created as per users requirement. 
+
+NPM:It is Node Package Manager, it is online repository of NodeJS which basically holds modules and package collections.which can be used to get packages in application when required and also be used to upload custom package.
+ex:
+https://www.npmjs.com/package/express
+===============
+.mjs extension:
+MJS stands for Module JavaScript
+The .mjs file extension is used for JavaScript files that follow the ECMAScript Modules (ESM) specification.
+==============
+How does .mjs work? 
+.mjs files are treated as ES modules by default.
+They use import and export statements.
+ES modules are loaded asynchronously, which can improve performance.
+Modern browsers natively support ES modules.
+===================
