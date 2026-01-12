@@ -1,0 +1,44 @@
+<!-- 
+OOPS:Object Oriented Programming Structure.
+Object:Real world entity. ex:laptop,chair etc
+Properties:Shape,Size,Height,Weight,Color,Price,Modelno etc
+Behaviour:Chair:rotate,move,sitting.
+========
+class:
+1.It is a blue print of an object.
+2.It is a collection of an object.
+3.It is a user defined datatype.
+4.It is a collection of variables and methods.
+=====
+Difference between method and functions:
+In JavaScript, a function is a reusable block of code that performs a specific task, while a method is a function that is associated with an object and can access and manipulate the object's properties.
+=====
+Object:Memory
+It is an instance(example) of a class.
+=======
+this: it is a reference to current class object.
+-->
+
+<script>
+class Mobile {
+    //object variable or instance variable
+    company=""
+    features=""
+    price=0.0
+
+    setData(){
+        this.company=prompt("Enter a company")
+        this.features=prompt("Enter a features")
+        this.price=parseFloat(prompt("Enter a price"))
+    }
+    getData(){
+        document.write("<h1>Company:"+this.company+"</h1>")
+        document.write("<h1>Price:"+this.price+"</h1>")
+        document.write("<h1>Features:"+this.features+"</h1>")
+    }
+}
+//new: It is a keyword   is used to allocate memory
+var m1 = new Mobile()
+m1.setData()  
+m1.getData()
+</script>
