@@ -1,0 +1,945 @@
+to show database:
+
+show dbs
+show databases
+==============
+create Database:
+
+use DB_Employee
+==============
+show tables in database:
+
+show collections
+==============
+DB_Employee> show collections
+
+DB_Employee> db.createCollection('Employee')
+{ ok: 1 }
+DB_Employee> show collections
+Employee
+DB_Employee> 
+===============
+insert one record:
+
+DB_Employee> db.Employee.insertOne({"emp_name":"Neha Sharma","emp_id":101,"emp_salary":34567.45,"emp_designation":"Web Developer","emp_city":"Indore"})
+{
+  acknowledged: true,
+  insertedId: ObjectId("66d6dcf70cc63c03275f80f1")
+}
+===============
+DB_Employee> db.Employee.insertMany([{"emp_name":"Priya Sharma","emp_id":102,"emp_salary":44567.45,"emp_designation":"iOS Developer","emp_city":"Indore"},{"emp_name":"Rahul Sharma","emp_id":103,"emp_salary":55789.88,"emp_designation":"Android Developer","emp_city":"Ujjain"}])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId("66d6ddba0cc63c03275f80f2"),
+    '1': ObjectId("66d6ddba0cc63c03275f80f3")
+  }
+}
+==================
+DB_Employee> db.Employee.find()
+[
+  {
+    _id: ObjectId("66d6dcf70cc63c03275f80f1"),
+    emp_name: 'Neha Sharma',
+    emp_id: 101,
+    emp_salary: 34567.45,
+    emp_designation: 'Web Developer',
+    emp_city: 'Indore'
+  },
+  {
+    _id: ObjectId("66d6ddba0cc63c03275f80f2"),
+    emp_name: 'Priya Sharma',
+    emp_id: 102,
+    emp_salary: 44567.45,
+    emp_designation: 'iOS Developer',
+    emp_city: 'Indore'
+  },
+  {
+    _id: ObjectId("66d6ddba0cc63c03275f80f3"),
+    emp_name: 'RAVEE Sharma',
+    emp_id: 103,
+    emp_salary: 55789.88,
+    emp_designation: 'Android Developer',
+    emp_city: 'Ujjain'
+  },
+  {
+    _id: ObjectId("66d6de650cc63c03275f80f4"),
+    emp_name: 'Mohan Verma',
+    emp_id: 104,
+    emp_salary: 24567.45,
+    emp_designation: 'Accountant',
+    emp_city: 'Dewas'
+  },
+  {
+    _id: ObjectId("66d6de930cc63c03275f80f5"),
+    emp_name: 'Harshika Verma',
+    emp_id: 105,
+    emp_salary: 32467.45,
+    emp_designation: 'ReactJS Developer',
+    emp_city: 'Indore'
+  }
+]
+====================
+DB_Employee> db.Employee.find().limit(2)
+[
+  {
+    _id: ObjectId("66d6dcf70cc63c03275f80f1"),
+    emp_name: 'Saloni Sharma',
+    emp_id: 101,
+    emp_salary: 34567.45,
+    emp_designation: 'Web Developer',
+    emp_city: 'Indore'
+  },
+  {
+    _id: ObjectId("66d6ddba0cc63c03275f80f2"),
+    emp_name: 'Shivani Sharma',
+    emp_id: 102,
+    emp_salary: 44567.45,
+    emp_designation: 'iOS Developer',
+    emp_city: 'Indore'
+  }
+]
+===================
+DB_Employee> db.Employee.find({"emp_city":"Indore"})
+[
+  {
+    _id: ObjectId("66d6dcf70cc63c03275f80f1"),
+    emp_name: 'Payal Sharma',
+    emp_id: 101,
+    emp_salary: 34567.45,
+    emp_designation: 'Web Developer',
+    emp_city: 'Indore'
+  },
+  {
+    _id: ObjectId("66d6ddba0cc63c03275f80f2"),
+    emp_name: 'Payal Sharma',
+    emp_id: 102,
+    emp_salary: 44567.45,
+    emp_designation: 'iOS Developer',
+    emp_city: 'Indore'
+  },
+  {
+    _id: ObjectId("66d6de930cc63c03275f80f5"),
+    emp_name: 'Mukesh Verma',
+    emp_id: 105,
+    emp_salary: 32467.45,
+    emp_designation: 'ReactJS Developer',
+    emp_city: 'Indore'
+  }
+]
+=========
+DB_Employee> db.Employee.find({"emp_designation":"iOS Developer"})
+[
+  {
+    _id: ObjectId("66d6ddba0cc63c03275f80f2"),
+    emp_name: 'Monika Sharma',
+    emp_id: 102,
+    emp_salary: 44567.45,
+    emp_designation: 'iOS Developer',
+    emp_city: 'Indore'
+  }
+]
+===========
+Greater Than:
+
+DB_Employee> db.Employee.find({"emp_salary":{$gt:30000.0}})
+[
+  {
+    _id: ObjectId("66d6dcf70cc63c03275f80f1"),
+    emp_name: 'Neha Sharma',
+    emp_id: 101,
+    emp_salary: 34567.45,
+    emp_designation: 'Web Developer',
+    emp_city: 'Indore'
+  },
+  {
+    _id: ObjectId("66d6ddba0cc63c03275f80f2"),
+    emp_name: 'Priya Sharma',
+    emp_id: 102,
+    emp_salary: 44567.45,
+    emp_designation: 'iOS Developer',
+    emp_city: 'Indore'
+  },
+  {
+    _id: ObjectId("66d6ddba0cc63c03275f80f3"),
+    emp_name: 'Rahul Sharma',
+    emp_id: 103,
+    emp_salary: 55789.88,
+    emp_designation: 'Android Developer',
+    emp_city: 'Ujjain'
+  },
+  {
+    _id: ObjectId("66d6de930cc63c03275f80f5"),
+    emp_name: 'Mukesh Verma',
+    emp_id: 105,
+    emp_salary: 32467.45,
+    emp_designation: 'ReactJS Developer',
+    emp_city: 'Indore'
+  }
+]
+
+======================
+Less Than:lt
+
+DB_Employee> db.Employee.find({"emp_salary":{$lt:30000.0}})
+[
+  {
+    _id: ObjectId("66d6de650cc63c03275f80f4"),
+    emp_name: 'Mohan Verma',
+    emp_id: 104,
+    emp_salary: 24567.45,
+    emp_designation: 'Accountant',
+    emp_city: 'Dewas'
+  }
+]
+======================
+Greater Than or Equal to:
+
+DB_Employee> db.Employee.find({"emp_salary":{$gte:44567.45}})
+[
+  {
+    _id: ObjectId("66d6ddba0cc63c03275f80f2"),
+    emp_name: 'Priya Sharma',
+    emp_id: 102,
+    emp_salary: 44567.45,
+    emp_designation: 'iOS Developer',
+    emp_city: 'Indore'
+  },
+  {
+    _id: ObjectId("66d6ddba0cc63c03275f80f3"),
+    emp_name: 'Rahul Sharma',
+    emp_id: 103,
+    emp_salary: 55789.88,
+    emp_designation: 'Android Developer',
+    emp_city: 'Ujjain'
+  }
+]
+======================
+Less Than or Equal to:
+
+DB_Employee> db.Employee.find({ "emp_salary": { $lte: 44567.45 } })
+[
+  {
+    _id: ObjectId("66d6dcf70cc63c03275f80f1"),
+    emp_name: 'Neha Sharma',
+    emp_id: 101,
+    emp_salary: 34567.45,
+    emp_designation: 'Web Developer',
+    emp_city: 'Indore'
+  },
+  {
+    _id: ObjectId("66d6ddba0cc63c03275f80f2"),
+    emp_name: 'Priya Sharma',
+    emp_id: 102,
+    emp_salary: 44567.45,
+    emp_designation: 'iOS Developer',
+    emp_city: 'Indore'
+  },
+  {
+    _id: ObjectId("66d6de650cc63c03275f80f4"),
+    emp_name: 'Mohan Verma',
+    emp_id: 104,
+    emp_salary: 24567.45,
+    emp_designation: 'Accountant',
+    emp_city: 'Dewas'
+  },
+  {
+    _id: ObjectId("66d6de930cc63c03275f80f5"),
+    emp_name: 'Mukesh Verma',
+    emp_id: 105,
+    emp_salary: 32467.45,
+    emp_designation: 'ReactJS Developer',
+    emp_city: 'Indore'
+  }
+]
+======================
+find count of documents:=
+DB_Employee>db.Employee.countDocuments();
+5
+======================
+not Equal to: ne
+
+DB_Employee> db.Employee.find({ "emp_salary": { $ne: 44567.45 } })
+[
+  {
+    _id: ObjectId("66d6dcf70cc63c03275f80f1"),
+    emp_name: 'Neha Sharma',
+    emp_id: 101,
+    emp_salary: 34567.45,
+    emp_designation: 'Web Developer',
+    emp_city: 'Indore'
+  },
+  {
+    _id: ObjectId("66d6ddba0cc63c03275f80f3"),
+    emp_name: 'Rahul Sharma',
+    emp_id: 103,
+    emp_salary: 55789.88,
+    emp_designation: 'Android Developer',
+    emp_city: 'Ujjain'
+  },
+  {
+    _id: ObjectId("66d6de650cc63c03275f80f4"),
+    emp_name: 'Mohan Verma',
+    emp_id: 104,
+    emp_salary: 24567.45,
+    emp_designation: 'Accountant',
+    emp_city: 'Dewas'
+  },
+  {
+    _id: ObjectId("66d6de930cc63c03275f80f5"),
+    emp_name: 'Mukesh Verma',
+    emp_id: 105,
+    emp_salary: 32467.45,
+    emp_designation: 'ReactJS Developer',
+    emp_city: 'Indore'
+  }
+]
+DB_Employee> 
+
+=======================
+AND Operator:
+
+DB_Employee> db.Employee.find({$and:[{"emp_city":"Indore"},{"emp_salary":{$gt:40000.0}}]})
+[
+  {
+    _id: ObjectId("66d6ddba0cc63c03275f80f2"),
+    emp_name: 'Priya Sharma',
+    emp_id: 102,
+    emp_salary: 44567.45,
+    emp_designation: 'iOS Developer',
+    emp_city: 'Indore'
+  }
+]
+=======================
+OR Operator:
+
+DB_Employee> db.Employee.find({$or:[{"emp_city":"Indore"},{"emp_salary":{$gt:40000.0}}]})
+[
+  {
+    _id: ObjectId("66d6dcf70cc63c03275f80f1"),
+    emp_name: 'Neha Sharma',
+    emp_id: 101,
+    emp_salary: 34567.45,
+    emp_designation: 'Web Developer',
+    emp_city: 'Indore'
+  },
+  {
+    _id: ObjectId("66d6ddba0cc63c03275f80f2"),
+    emp_name: 'Priya Sharma',
+    emp_id: 102,
+    emp_salary: 44567.45,
+    emp_designation: 'iOS Developer',
+    emp_city: 'Indore'
+  },
+  {
+    _id: ObjectId("66d6ddba0cc63c03275f80f3"),
+    emp_name: 'Rahul Sharma',
+    emp_id: 103,
+    emp_salary: 55789.88,
+    emp_designation: 'Android Developer',
+    emp_city: 'Ujjain'
+  },
+  {
+    _id: ObjectId("66d6de930cc63c03275f80f5"),
+    emp_name: 'Mukesh Verma',
+    emp_id: 105,
+    emp_salary: 32467.45,
+    emp_designation: 'ReactJS Developer',
+    emp_city: 'Indore'
+  }
+]
+DB_Employee> 
+======================
+Update Single Record:
+
+DB_Employee> db.Employee.updateOne({"_id":ObjectId("66d6de650cc63c03275f80f4")},{$set:{"emp_salary":25000.0}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+DB_Employee> db.Employee.find()
+[
+  {
+    _id: ObjectId("66d6dcf70cc63c03275f80f1"),
+    emp_name: 'Neha Sharma',
+    emp_id: 101,
+    emp_salary: 34567.45,
+    emp_designation: 'Web Developer',
+    emp_city: 'Indore'
+  },
+  {
+    _id: ObjectId("66d6ddba0cc63c03275f80f2"),
+    emp_name: 'Priya Sharma',
+    emp_id: 102,
+    emp_salary: 44567.45,
+    emp_designation: 'iOS Developer',
+    emp_city: 'Indore'
+  },
+  {
+    _id: ObjectId("66d6ddba0cc63c03275f80f3"),
+    emp_name: 'Rahul Sharma',
+    emp_id: 103,
+    emp_salary: 55789.88,
+    emp_designation: 'Android Developer',
+    emp_city: 'Ujjain'
+  },
+  {
+    _id: ObjectId("66d6de650cc63c03275f80f4"),
+    emp_name: 'Mohan Verma',
+    emp_id: 104,
+    emp_salary: 25000,
+    emp_designation: 'Accountant',
+    emp_city: 'Dewas'
+  },
+  {
+    _id: ObjectId("66d6de930cc63c03275f80f5"),
+    emp_name: 'Mukesh Verma',
+    emp_id: 105,
+    emp_salary: 32467.45,
+    emp_designation: 'ReactJS Developer',
+    emp_city: 'Indore'
+  }
+]
+DB_Employee> 
+
+===============================
+$inc:salary Increment By 1000 :
+
+DB_Employee> db.Employee.updateMany({},{$inc:{"emp_salary":1000}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 5,
+  modifiedCount: 5,
+  upsertedCount: 0
+}
+DB_Employee> db.Employee.find()
+[
+  {
+    _id: ObjectId("66d6dcf70cc63c03275f80f1"),
+    emp_name: 'Neha Sharma',
+    emp_id: 101,
+    emp_salary: 35567.45,
+    emp_designation: 'Web Developer',
+    emp_city: 'Indore'
+  },
+  {
+    _id: ObjectId("66d6ddba0cc63c03275f80f2"),
+    emp_name: 'Priya Sharma',
+    emp_id: 102,
+    emp_salary: 45567.45,
+    emp_designation: 'iOS Developer',
+    emp_city: 'Indore'
+  },
+  {
+    _id: ObjectId("66d6ddba0cc63c03275f80f3"),
+    emp_name: 'Rahul Sharma',
+    emp_id: 103,
+    emp_salary: 56789.88,
+    emp_designation: 'Android Developer',
+    emp_city: 'Ujjain'
+  },
+  {
+    _id: ObjectId("66d6de650cc63c03275f80f4"),
+    emp_name: 'Mohan Verma',
+    emp_id: 104,
+    emp_salary: 26000,
+    emp_designation: 'Accountant',
+    emp_city: 'Dewas'
+  },
+  {
+    _id: ObjectId("66d6de930cc63c03275f80f5"),
+    emp_name: 'Mukesh Verma',
+    emp_id: 105,
+    emp_salary: 33467.45,
+    emp_designation: 'ReactJS Developer',
+    emp_city: 'Indore'
+  }
+]
+DB_Employee> 
+
+==========================
+decrement by 1000:
+
+DB_Employee> db.Employee.updateMany({},{$inc:{"emp_salary":-1000}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 5,
+  modifiedCount: 5,
+  upsertedCount: 0
+}
+
+==========================
+DB_Employee> db.Employee.updateMany({},{$mul:{"emp_salary":2}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 5,
+  modifiedCount: 5,
+  upsertedCount: 0
+}
+DB_Employee> db.Employee.find()
+[
+  {
+    _id: ObjectId("66d6dcf70cc63c03275f80f1"),
+    emp_name: 'Neha Sharma',
+    emp_id: 101,
+    emp_salary: 69134.9,
+    emp_designation: 'Web Developer',
+    emp_city: 'Indore'
+  },
+  {
+    _id: ObjectId("66d6ddba0cc63c03275f80f2"),
+    emp_name: 'Priya Sharma',
+    emp_id: 102,
+    emp_salary: 89134.9,
+    emp_designation: 'iOS Developer',
+    emp_city: 'Indore'
+  },
+  {
+    _id: ObjectId("66d6ddba0cc63c03275f80f3"),
+    emp_name: 'Rahul Sharma',
+    emp_id: 103,
+    emp_salary: 111579.76,
+    emp_designation: 'Android Developer',
+    emp_city: 'Ujjain'
+  },
+  {
+    _id: ObjectId("66d6de650cc63c03275f80f4"),
+    emp_name: 'Mohan Verma',
+    emp_id: 104,
+    emp_salary: 50000,
+    emp_designation: 'Accountant',
+    emp_city: 'Dewas'
+  },
+  {
+    _id: ObjectId("66d6de930cc63c03275f80f5"),
+    emp_name: 'Mukesh Verma',
+    emp_id: 105,
+    emp_salary: 64934.899999999994,
+    emp_designation: 'ReactJS Developer',
+    emp_city: 'Indore'
+  }
+]
+DB_Employee> 
+
+==========================
+Divide:
+
+db.Employee.updateMany({},{$mul:{"emp_salary":0.5}})
+
+==============================
+
+Delete Single Record:
+
+DB_Employee> db.Employee.deleteOne({"_id":ObjectId("66d6de930cc63c03275f80f5")}) 
+{ acknowledged: true, deletedCount: 1 }
+DB_Employee> 
+
+DB_Employee> db.Employee.find()
+[
+  {
+    _id: ObjectId("66d6dcf70cc63c03275f80f1"),
+    emp_name: 'Neha Sharma',
+    emp_id: 101,
+    emp_salary: 69134.9,
+    emp_designation: 'Web Developer',
+    emp_city: 'Indore'
+  },
+  {
+    _id: ObjectId("66d6ddba0cc63c03275f80f2"),
+    emp_name: 'Priya Sharma',
+    emp_id: 102,
+    emp_salary: 89134.9,
+    emp_designation: 'iOS Developer',
+    emp_city: 'Indore'
+  },
+  {
+    _id: ObjectId("66d6ddba0cc63c03275f80f3"),
+    emp_name: 'Rahul Sharma',
+    emp_id: 103,
+    emp_salary: 111579.76,
+    emp_designation: 'Android Developer',
+    emp_city: 'Ujjain'
+  },
+  {
+    _id: ObjectId("66d6de650cc63c03275f80f4"),
+    emp_name: 'Mohan Verma',
+    emp_id: 104,
+    emp_salary: 50000,
+    emp_designation: 'Accountant',
+    emp_city: 'Dewas'
+  }
+]
+DB_Employee> 
+
+==========================
+
+Delete one or more:
+
+DB_Employee> db.Employee.deleteMany({"emp_city":"Indore"})
+{ acknowledged: true, deletedCount: 2 }
+DB_Employee> 
+
+DB_Employee> db.Employee.find()
+[
+  {
+    _id: ObjectId("66d6ddba0cc63c03275f80f3"),
+    emp_name: 'Rahul Sharma',
+    emp_id: 103,
+    emp_salary: 111579.76,
+    emp_designation: 'Android Developer',
+    emp_city: 'Ujjain'
+  },
+  {
+    _id: ObjectId("66d6de650cc63c03275f80f4"),
+    emp_name: 'Mohan Verma',
+    emp_id: 104,
+    emp_salary: 50000,
+    emp_designation: 'Accountant',
+    emp_city: 'Dewas'
+  }
+]
+DB_Employee> 
+
+==========================
+DB_Employee> db.Employee.aggregate([{$sort:{"emp_salary":1}}])
+[
+  {
+    _id: ObjectId("66d82d91be7955ed6446563e"),
+    emp_name: 'Priya Sharma',
+    emp_id: 102,
+    emp_salary: 44567.45,
+    emp_designation: 'iOS Developer',
+    emp_city: 'Indore'
+  },
+  {
+    _id: ObjectId("66d82d91be7955ed6446563f"),
+    emp_name: 'Mohan Sharma',
+    emp_id: 101,
+    emp_salary: 45789.88,
+    emp_designation: 'Android Developer',
+    emp_city: 'Ujjain'
+  },
+  {
+    _id: ObjectId("66d6de650cc63c03275f80f4"),
+    emp_name: 'Mohan Verma',
+    emp_id: 104,
+    emp_salary: 50000,
+    emp_designation: 'Accountant',
+    emp_city: 'Dewas'
+  },
+  {
+    _id: ObjectId("66d6ddba0cc63c03275f80f3"),
+    emp_name: 'Rahul Sharma',
+    emp_id: 103,
+    emp_salary: 111579.76,
+    emp_designation: 'Android Developer',
+    emp_city: 'Ujjain'
+  }
+]
+DB_Employee> db.Employee.aggregate([{$sort:{"emp_salary":-1}}])
+[
+  {
+    _id: ObjectId("66d6ddba0cc63c03275f80f3"),
+    emp_name: 'Rahul Sharma',
+    emp_id: 103,
+    emp_salary: 111579.76,
+    emp_designation: 'Android Developer',
+    emp_city: 'Ujjain'
+  },
+  {
+    _id: ObjectId("66d6de650cc63c03275f80f4"),
+    emp_name: 'Mohan Verma',
+    emp_id: 104,
+    emp_salary: 50000,
+    emp_designation: 'Accountant',
+    emp_city: 'Dewas'
+  },
+  {
+    _id: ObjectId("66d82d91be7955ed6446563f"),
+    emp_name: 'Mohan Sharma',
+    emp_id: 101,
+    emp_salary: 45789.88,
+    emp_designation: 'Android Developer',
+    emp_city: 'Ujjain'
+  },
+  {
+    _id: ObjectId("66d82d91be7955ed6446563e"),
+    emp_name: 'Priya Sharma',
+    emp_id: 102,
+    emp_salary: 44567.45,
+    emp_designation: 'iOS Developer',
+    emp_city: 'Indore'
+  }
+]
+DB_Employee> 
+============================
+_Employee> db.Employee.aggregate([{$sort:{"emp_name":1}}])
+[
+  {
+    _id: ObjectId("66d82d91be7955ed6446563f"),
+    emp_name: 'Mohan Sharma',
+    emp_id: 101,
+    emp_salary: 45789.88,
+    emp_designation: 'Android Developer',
+    emp_city: 'Ujjain'
+  },
+  {
+    _id: ObjectId("66d6de650cc63c03275f80f4"),
+    emp_name: 'Mohan Verma',
+    emp_id: 104,
+    emp_salary: 50000,
+    emp_designation: 'Accountant',
+    emp_city: 'Dewas'
+  },
+  {
+    _id: ObjectId("66d82d91be7955ed6446563e"),
+    emp_name: 'Priya Sharma',
+    emp_id: 102,
+    emp_salary: 44567.45,
+    emp_designation: 'iOS Developer',
+    emp_city: 'Indore'
+  },
+  {
+    _id: ObjectId("66d6ddba0cc63c03275f80f3"),
+    emp_name: 'Rahul Sharma',
+    emp_id: 103,
+    emp_salary: 111579.76,
+    emp_designation: 'Android Developer',
+    emp_city: 'Ujjain'
+  }
+]
+DB_Employee> db.Employee.aggregate([{$sort:{"emp_name":-1}}])
+[
+  {
+    _id: ObjectId("66d6ddba0cc63c03275f80f3"),
+    emp_name: 'Rahul Sharma',
+    emp_id: 103,
+    emp_salary: 111579.76,
+    emp_designation: 'Android Developer',
+    emp_city: 'Ujjain'
+  },
+  {
+    _id: ObjectId("66d82d91be7955ed6446563e"),
+    emp_name: 'Priya Sharma',
+    emp_id: 102,
+    emp_salary: 44567.45,
+    emp_designation: 'iOS Developer',
+    emp_city: 'Indore'
+  },
+  {
+    _id: ObjectId("66d6de650cc63c03275f80f4"),
+    emp_name: 'Mohan Verma',
+    emp_id: 104,
+    emp_salary: 50000,
+    emp_designation: 'Accountant',
+    emp_city: 'Dewas'
+  },
+  {
+    _id: ObjectId("66d82d91be7955ed6446563f"),
+    emp_name: 'Mohan Sharma',
+    emp_id: 101,
+    emp_salary: 45789.88,
+    emp_designation: 'Android Developer',
+    emp_city: 'Ujjain'
+  }
+]
+DB_Employee> 
+
+======================================
+Search by empname:
+
+DB_Employee> db.Employee.find({"emp_name":/^M/i})
+[
+  {
+    _id: ObjectId("66d6de650cc63c03275f80f4"),
+    emp_name: 'Mohan Verma',
+    emp_id: 104,
+    emp_salary: 50000,
+    emp_designation: 'Accountant',
+    emp_city: 'Dewas'
+  },
+  {
+    _id: ObjectId("66d82d91be7955ed6446563f"),
+    emp_name: 'Mohan Sharma',
+    emp_id: 101,
+    emp_salary: 45789.88,
+    emp_designation: 'Android Developer',
+    emp_city: 'Ujjain'
+  }
+]
+DB_Employee> db.Employee.find({"emp_name":/^m/i})
+[
+  {
+    _id: ObjectId("66d6de650cc63c03275f80f4"),
+    emp_name: 'Mohan Verma',
+    emp_id: 104,
+    emp_salary: 50000,
+    emp_designation: 'Accountant',
+    emp_city: 'Dewas'
+  },
+  {
+    _id: ObjectId("66d82d91be7955ed6446563f"),
+    emp_name: 'Mohan Sharma',
+    emp_id: 101,
+    emp_salary: 45789.88,
+    emp_designation: 'Android Developer',
+    emp_city: 'Ujjain'
+  }
+]
+DB_Employee> db.Employee.find({"emp_name":/^r/i})
+[
+  {
+    _id: ObjectId("66d6ddba0cc63c03275f80f3"),
+    emp_name: 'Rahul Sharma',
+    emp_id: 103,
+    emp_salary: 111579.76,
+    emp_designation: 'Android Developer',
+    emp_city: 'Ujjain'
+  }
+]
+DB_Employee> 
+===================
+DB_Employee> db.Employee.updateMany({},{$set:{"emp_exp":2}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 4,
+  modifiedCount: 4,
+  upsertedCount: 0
+}
+=====================
+DB_Employee> db.Employee.find()
+[
+  {
+    _id: ObjectId("66d6ddba0cc63c03275f80f3"),
+    emp_name: 'Rahul Sharma',
+    emp_id: 103,
+    emp_salary: 111579.76,
+    emp_designation: 'Android Developer',
+    emp_city: 'Ujjain',
+    emp_exp: 2
+  },
+  {
+    _id: ObjectId("66d6de650cc63c03275f80f4"),
+    emp_name: 'Mohan Verma',
+    emp_id: 104,
+    emp_salary: 50000,
+    emp_designation: 'Accountant',
+    emp_city: 'Dewas',
+    emp_exp: 2
+  },
+  {
+    _id: ObjectId("66d82d91be7955ed6446563e"),
+    emp_name: 'Priya Sharma',
+    emp_id: 102,
+    emp_salary: 44567.45,
+    emp_designation: 'iOS Developer',
+    emp_city: 'Indore',
+    emp_exp: 2
+  },
+  {
+    _id: ObjectId("66d82d91be7955ed6446563f"),
+    emp_name: 'Mohan Sharma',
+    emp_id: 101,
+    emp_salary: 45789.88,
+    emp_designation: 'Android Developer',
+    emp_city: 'Ujjain',
+    emp_exp: 2
+  }
+]
+DB_Employee> 
+
+=================================
+get specific pair:
+
+DB_Employee> db.Employee.find({},{"emp_salary":true})
+[
+  { _id: ObjectId("66d6ddba0cc63c03275f80f3"), emp_salary: 111579.76 },
+  { _id: ObjectId("66d6de650cc63c03275f80f4"), emp_salary: 50000 },
+  { _id: ObjectId("66d82d91be7955ed6446563e"), emp_salary: 44567.45 },
+  { _id: ObjectId("66d82d91be7955ed6446563f"), emp_salary: 45789.88 }
+]
+DB_Employee> db.Employee.find({},{"emp_salary":true,"_id":false})
+[
+  { emp_salary: 111579.76 },
+  { emp_salary: 50000 },
+  { emp_salary: 44567.45 },
+  { emp_salary: 45789.88 }
+]
+DB_Employee> db.Employee.find({},{"emp_salary":true,"emp_name":true,"_id":false})
+[
+  { emp_name: 'Rahul Sharma', emp_salary: 111579.76 },
+  { emp_name: 'Mohan Verma', emp_salary: 50000 },
+  { emp_name: 'Priya Sharma', emp_salary: 44567.45 },
+  { emp_name: 'Mohan Sharma', emp_salary: 45789.88 }
+]
+DB_Employee> 
+
+============================
+DB_Employee> db.Employee.find({"emp_salary":{$gt:40000}},{"emp_salary":true,"emp_name":true,"_id":false}).limit(2)
+[
+  { emp_name: 'Rahul Sharma', emp_salary: 111579.76 },
+  { emp_name: 'Mohan Verma', emp_salary: 50000 }
+]
+==============================
+DB_Employee> db.Employee.aggregate([{"$group":{"_id":null,"max":{"$max":"$emp_salary"},"min":{"$min":"$emp_salary"}}}])
+[ { _id: null, max: 111579.76, min: 44567.45 } ]
+DB_Employee> 
+
+DB_Employee> db.Employee.aggregate([{"$group":{"_id":null,"sum":{"$sum":"$emp_salary"}}}])
+[ { _id: null, sum: 251937.09 } ]
+DB_Employee> 
+================
+DB_Employee> db.Employee.find({}).sort({"emp_salary":-1}).limit(1)
+[
+  {
+    _id: ObjectId("6757eadd69bdff5fcfc877b7"),
+    emp_name: 'Rahul Sharma',
+    emp_id: 103,
+    emp_salary: 55789.88,
+    emp_designation: 'Android Developer',
+    emp_city: 'Ujjain',
+    emp_exp: 2
+  }
+]
+DB_Employee> db.Employee.find({}).sort({"emp_salary":-1}).skip(1).limit(1) 
+[
+  {
+    _id: ObjectId("6757eadd69bdff5fcfc877b6"),
+    emp_name: 'Preeti Verma',
+    emp_id: 106,
+    emp_salary: 44567.45,
+    emp_designation: 'iOS Developer',
+    emp_city: 'Indore',
+    emp_exp: 2
+  }
+]
+DB_Employee> 
+
+==================
+DB_Employee> db.Employee.find({},{"emp_salary":true,"emp_name":true,"_id":false}).sort({"emp_salary":-1}).limit(1)
+[ { emp_name: 'Rahul Sharma', emp_salary: 55789.88 } ]
+DB_Employee> 
+
+========================
+DB_Employee> db.Employee.find({},{"emp_salary":true,"emp_name":true,"_id":false}).sort({"emp_salary":1}).limit(1)
+[ { emp_name: 'Neha Sharma', emp_salary: 34567.45 } ]
+DB_Employee> 
+========================
+DB_Employee> db.Employee.drop()
+true
+DB_Employee> show collections
+
+DB_Employee> db.dropDatabase()
+{ ok: 1, dropped: 'DB_Employee' }
+DB_Employee> 
+
+
+	
+

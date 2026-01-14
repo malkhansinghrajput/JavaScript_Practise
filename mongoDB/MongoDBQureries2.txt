@@ -1,0 +1,20 @@
+=================================
+
+mongodump
+ 
+=======================================
+ 
+mongodump --out backup
+ 
+========================================
+ 
+mongodump -d Employee --out EmpBackup
+ 
+mongodump -d Employee -c employees --out empcollectionbackup
+ 
+=========================================
+ 
+mongorestore
+ 
+mongorestore EmpBackup
+ 
