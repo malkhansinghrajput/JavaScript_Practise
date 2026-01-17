@@ -1,0 +1,23 @@
+npm install dotenv
+=========================
+ 
+The . env file is particularly useful for storing sensitive information such as API keys, access tokens, and passwords. By keeping this information in a separate file, you can share the main codebase without exposing sensitive details.     
+ex:
+     config folder/config.env: 
+     -------------
+     DB_NAME="ecommerce"
+     DB_URL="mongodb://localhost:27017/
+     PORT_NO=4000
+     ---------------
+     import dotenv from 'dotenv'
+     dotenv.config({path:"./config/config.env"})
+     const PORTNO = process.env.PORTNO || 4000
+     const db_name = process.env.DB_NAME
+     const db_url = process.env.DB_URL
+==================
+Dotenv is a zero-dependency module that loads environment variables from a .env file into process.env.
+Access .env file:
+===========
+process.env is a powerful global object that provides access to environment variables within your application. These variables are key-value pairs that can store configuration settings, secrets, or any information that may vary between development, testing, and production environments.
+==============
+In an operating system (OS), a process is essentially a program in execution, meaning it's an active instance of a program with its own memory space, resources, and execution context, managed by the OS

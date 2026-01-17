@@ -1,0 +1,40 @@
+Schema:-
+-----------
+A document schema is a JSON object that allows us to define the shape and content of documents and embedded documents in a collection. We can use a schema to require a specific set of fields, configure the content of a field, or to validate changes to a document based on its begining and ending states.
+
+ex: name:{type:String,required:true,trim:true},
+    age:{type:Number,required:true,min:18,max:50},
+    join:{type:Date,default:Date.now}
+
+--------------------------------------------------------------
+Defining Schema:-
+----------------------
+Everything in Mongoose starts with a Schema.Each schema maps to a MongoDB collection and defines the shape of the documents within that collection.
+By default,Mongoose adds an _id property to our schemas.
+
+Syntax:-
+var mongoose = require('mongoose')
+const customerSchema =  mongoose.Schema({
+ name:{type:String},
+ email:{type:String},
+ })
+ 
+ //compiling schema
+const Customer = mongoose.model('Employee',customerSchema)
+ 
+//Creating document
+const cust = new Customer({
+name:'Rahul',
+email:'rahulsharma@gmail.com,
+})
+
+//Saving Document
+cust.save()
+
+---------------------------------------------------------------------------------------------------------
+
+
+Route => Controller => Modal (schema)
+
+
+

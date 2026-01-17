@@ -1,0 +1,9 @@
+Models:-
+---------
+An instance of a model is called a document.
+Models are responsible for creating and reading documents from underlying MongoDB database.
+
+Defining and creating models. Models are defined using the Schema interface. The Schema allows us to define the fields stored in each document along with their validation requirements and default values.
+
+===========================================================
+A Mongoose model is a wrapper of the Mongoose schema. A Mongoose schema defines the document's properties, default values, types of data, validators, etc. In contrast, a Mongoose model provides an interface for the database to create, query, update, delete records, and so on.

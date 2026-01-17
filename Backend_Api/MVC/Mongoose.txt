@@ -1,0 +1,10 @@
+npm install mongoose --save.
+Mongoose is a JavaScript object-oriented programming library that creates a connection between MongoDB and the Node.js JavaScript runtime environment.
+========
+Mongoose is a Node. js-based Object Data Modeling (ODM) library for MongoDB.
+Mongoose is a MongoDB object modeling tool designed to work in an asynchronous environment.
+=========
+MongoDB is a document-oriented NoSQL database, while Mongoose is an Object Data Modeling (ODM) library for Node. js that provides a higher-level abstraction layer on top of MongoDB, allowing developers to define data models using a schema-based approach.
+=========
+It manages relationships between data, provides schema validation, and is used to translate between objects in code and the representation of those objects in MongoDB.
+=============

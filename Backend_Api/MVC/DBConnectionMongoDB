@@ -1,0 +1,164 @@
+
+npm install dotenv
+
+db_connect.js
+===========
+const mongoose = require('mongoose');
+
+const DB_Connect = async (DB_NAME,DB_URL)=>{
+    try {
+        await mongoose.connect(DB_URL+DB_NAME)
+        console.log("Database Connection Successfully Done !!!")
+    } catch (error) {
+        console.log("Database Connection Error:",error)
+    }
+}
+module.exports = DB_Connect
+=====================
+config/config.env
+---------------------
+PORTNO = 5000
+DB_NAME = mern_db_1Apr24
+DB_URL = mongodb://localhost:27017
+=========================
+app.js
+------
+dotenv.config({path:"./config/config.env"})
+const indexRouter = require('./route/Index');
+const PORTNO = process.env.PORTNO || 4000
+var app = express()
+
+//Connection TO MongoDB 
+DB_Connect(process.env.DB_NAME,process.env.DB_URL)
+
+//Returns middleware that only parses json
+app.use(express.json())
+
+//route
+app.use("",indexRouter)
+
+app.listen(PORTNO,()=>{
+    console.log(`Server Listening at http://localhost:${PORTNO}`)
+})
+
+==========================
+
+Index.js
+-----------
+const express = require('express');
+const indexController = require('../controller/IndexController')
+var router = express.Router()
+
+router.post("/register",indexController.register)
+
+module.exports = router
+===============================
+
+IndexController.js
+----------------------
+const CustomerModal = require('../modals/CustomerModal');
+
+const register = async (req, res) => {
+    console.log("/register")
+    //get all body parameters
+    console.log(req.body)
+
+    var customer = new CustomerModal(req.body)
+    customer.save()
+        .then((response) => {
+            return res.status(200).json({
+                status: true,
+                "record": response,
+                "msg": "Customer Register Successfully"
+            })
+        })
+        .catch((error) => {
+            return res.status(400).json({
+                status: false,
+                "error": error,
+                "msg": "Customer Not Register"
+            })
+        })
+
+}
+
+const login = async (req, res) => {
+    console.log("/login")
+}
+
+module.exports = {
+    register,
+    login
+}
+
+=======================
+CustomerModal.js
+---------------------------
+const mongoose = require('mongoose')
+var customerSchema = mongoose.Schema({
+    name: {
+        type: String,
+        required: [true, "Name is required"],
+        trim: true,
+        lowercase: true
+    },
+    email: {
+        type: String,
+        required: [true, "Email is required"],
+        trim: true,
+        unique: true,
+        lowercase: true
+    },
+    password: {
+        type: String,
+        required: [true, "Password is required"],
+        trim: true,
+        maxlength: 100,
+        minlength: 5
+    },
+    mobile: {
+        type: String,
+        required: [true, "Mobile Number is required"],
+        trim: true,
+        maxlength: 10,
+        minlength: 10
+    },
+  
+        
+        state: {
+            type: String,
+            required: [true, "State is required"],
+            trim: true,
+        },
+        city: {
+            type: String,
+            required: [true, "City is required"],
+            trim: true
+        },
+        pincode: {
+            type: Number,
+            required: [true, "Pincode is required"],
+            trim: true,
+        },
+    gender: {
+        type: String,
+        required: [true, "Gender is required"],
+        trim: true
+    },
+    role:{
+        type: String,
+        default:"customer"
+    },
+    status:{
+        type: Number,
+        default: 1
+    },
+    info: {
+       type: String,
+       default:Date()
+    },
+})
+
+var customerModal = mongoose.model("Customer",customerSchema)
+module.exports = customerModal
+=============================
