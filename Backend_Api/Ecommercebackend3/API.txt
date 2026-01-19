@@ -1,0 +1,96 @@
+1.URL:http://localhost:5000/register
+Request Type:POST
+Request Body:{
+    "name":"Rahul Sharma",
+    "email":"rahulsharma@gmail.com",
+    "password":"12345",
+    "mobile":"7898787876",
+    "state":"M.P",
+    "city":"Indore",
+    "pincode":452001,
+    "address":"Palasia Indore M.P pincode 452001",
+    "gender":"Male"
+}
+Response:{
+    "record": {
+        "name": "Rahul Sharma",
+        "email": "rahulsharma1@gmail.com",
+        "password": "$2b$10$7PHETTOZmjlKeeErQ/rAPuGnzCodCepsWtKfiMyb4JFt/yiSjU6D.",
+        "mobile": "7898787876",
+        "state": "M.P",
+        "city": "Indore",
+        "pincode": 452001,
+        "address": "Palasia Indore M.P Pincode 452001",
+        "gender": "Male",
+        "role": "customer",
+        "status": 1,
+        "info": "Tue Apr 29 2025 14:02:01 GMT+0530 (India Standard Time)",
+        "_id": "68108e8594b2f43905ac801e",
+        "__v": 0
+    },
+    "msg": "Customer Register Successfully"
+}
+=====================================
+2.URL:http://localhost:5000/login
+Request Type:POST
+Request Body:{
+    "email":"rahulsharma@gmail.com",
+    "password":"12345"
+}
+Response:{
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjdXN0b21lcl9pZCI6IjY4MGYzMzBkMDY4ODUxYzc4YzQzZGRkOSIsImlhdCI6MTc0NTgyODUzMSwiZXhwIjoxNzQ1ODI4ODMxfQ.XuTFzn1xf5ZJ14ne7AnYdKq9ic0XIZ1FthsBOoJPrpQ",
+    "record": {
+        "_id": "680f330d068851c78c43ddd9",
+        "name": "rahul sharma",
+        "email": "rahulsharma@gmail.com",
+        "password": "$2b$10$jK4uCZKGXxMIdffjLr0Nzee0KkZFuxzd/SFvG.4ZZAYiYUpQG9W1i",
+        "mobile": "7898787876",
+        "state": "M.P",
+        "city": "Indore",
+        "pincode": 452001,
+        "address": "Palasia Indore M.P pincode 452001",
+        "gender": "Male",
+        "role": "customer",
+        "status": 1,
+        "info": "Mon Apr 28 2025 13:18:44 GMT+0530 (India Standard Time)",
+        "__v": 0
+    },
+    "msg": "Login Successfully"
+}
+=====================================
+Note:Authorization 
+{
+  Bearer Token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjdXN0b21lcl9pZCI6IjY4MGYzMzBkMDY4ODUxYzc4YzQzZGRkOSIsImlhdCI6MTc0NTkxMjcxNCwiZXhwIjoxNzQ2MzQ0NzE0fQ.qIIoTWfGMg6p-WTaIpM-qGd9g-u6dQE-j8Dalcrn2IA
+}
+----------- 
+3.URL:http://localhost:5000/customer/editprofile?id=680f330d068851c78c43ddd9
+Request Type:PUT 
+Request Body:{
+    "name":"Rahul Kumar Sharma",
+    "mobile":"7898787888",
+    "state":"Maharastra",
+    "city":"Mumbai",
+    "pincode":400001,
+    "address":"Mumbai pincode 400001",
+    "gender":"Male"
+}
+Response:
+{
+    "msg": "Customer Record Updated Successfully !",
+    "record": {
+        "_id": "680f330d068851c78c43ddd9",
+        "name": "rahul kumar sharma",
+        "email": "rahulsharma@gmail.com",
+        "password": "$2b$10$jK4uCZKGXxMIdffjLr0Nzee0KkZFuxzd/SFvG.4ZZAYiYUpQG9W1i",
+        "mobile": "7898787888",
+        "state": "Maharastra",
+        "city": "Mumbai",
+        "pincode": 400001,
+        "address": "Mumbai pincode 400001",
+        "gender": "Male",
+        "role": "customer",
+        "status": 1,
+        "info": "Mon Apr 28 2025 13:18:44 GMT+0530 (India Standard Time)",
+        "__v": 0
+    }
+}
