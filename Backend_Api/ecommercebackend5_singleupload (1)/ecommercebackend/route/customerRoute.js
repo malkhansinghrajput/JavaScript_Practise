@@ -1,0 +1,14 @@
+import express from "express";
+import CustomerController from "../controller/customerController.js";
+import checkCustomerAuth from "../middleware/auth-middleware.js";
+import imgUpload from '../modal/singleUpload.js'
+
+const router = express.Router()
+
+router.use("/editprofile",checkCustomerAuth)
+
+router.put("/editprofile",CustomerController.editprofile)
+
+router.post('/uploaddocument',imgUpload.single("upload_doc"),CustomerController.uploaddocument)
+
+export default router
