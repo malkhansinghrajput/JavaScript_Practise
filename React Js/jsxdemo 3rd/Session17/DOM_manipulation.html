@@ -1,0 +1,41 @@
+<!-- 
+DOM Manipulation:
+It is used for making changes in HTML Element like add element,update element and remove element using Javascript.
+-->
+
+<div id="main">
+    <h1>This is a heading 1</h1>
+    <h1>This is a heading 2</h1>
+</div>
+
+<button onclick="insertElement()">
+    Add Element
+</button>
+<button onclick="updateElement()">
+    Update Element
+</button>
+<button onclick="removeElement()">
+    Remove Element
+</button>
+
+
+<script>
+    function updateElement(){
+       var obj = document.getElementById("h3")
+       obj.innerHTML = 'Hello World'
+    }
+    function removeElement(){
+       var obj = document.getElementById("h3")
+       obj.remove()
+    }
+    function insertElement(){
+       var h1Obj = document.createElement("h1")
+       var txtObj = document.createTextNode("This is a heading 3")
+       h1Obj.setAttribute("id","h3")
+       h1Obj.setAttribute("class","demo")
+       h1Obj.appendChild(txtObj)
+       console.log(h1Obj) 
+       var divObj = document.getElementById("main")
+       divObj.appendChild(h1Obj)
+    }
+</script>
